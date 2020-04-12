@@ -9,13 +9,30 @@
 /* Begin PBXBuildFile section */
 		8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F418243FD7D100C6033C /* AppDelegate.swift */; };
 		8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41A243FD7D100C6033C /* SceneDelegate.swift */; };
-		8E78F41D243FD7D100C6033C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41C243FD7D100C6033C /* FirstViewController.swift */; };
+		8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41C243FD7D100C6033C /* PetViewController.swift */; };
 		8E78F41F243FD7D100C6033C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41E243FD7D100C6033C /* SecondViewController.swift */; };
-		8E78F422243FD7D100C6033C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F420243FD7D100C6033C /* Main.storyboard */; };
 		8E78F424243FD7D700C6033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F423243FD7D700C6033C /* Assets.xcassets */; };
 		8E78F427243FD7D700C6033C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */; };
-		8E78F432243FD7D700C6033C /* DotVetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F431243FD7D700C6033C /* DotVetTests.swift */; };
+		8E78F432243FD7D700C6033C /* PetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F431243FD7D700C6033C /* PetTests.swift */; };
 		8E78F43D243FD7D800C6033C /* DotVetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F43C243FD7D800C6033C /* DotVetUITests.swift */; };
+		8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F44F2440DE6900C6033C /* PetProtocol.swift */; };
+		8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4512440DFB500C6033C /* SchemeProtocol.swift */; };
+		8E78F4542440EC1F00C6033C /* RegistryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4532440EC1F00C6033C /* RegistryProtocol.swift */; };
+		8E78F4562440ED5300C6033C /* OwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4552440ED5300C6033C /* OwnerProtocol.swift */; };
+		8E78F4582440ED7700C6033C /* Veterinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4572440ED7700C6033C /* Veterinary.swift */; };
+		8E78F45A2440F54700C6033C /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4592440F54700C6033C /* PetView.swift */; };
+		8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F45B2440F57700C6033C /* PetViewModel.swift */; };
+		8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4602440FCB800C6033C /* ViewModelType.swift */; };
+		8E78F463244104E200C6033C /* PreviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F462244104E200C6033C /* PreviewViews.swift */; };
+		8E78F465244127F900C6033C /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F464244127F900C6033C /* UIView+ext.swift */; };
+		8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */; };
+		8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */; };
+		8E78F46D24417E9700C6033C /* NavigationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46C24417E9700C6033C /* NavigationProtocols.swift */; };
+		8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */; };
+		8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4722443747B00C6033C /* AddPetViewController.swift */; };
+		8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4742443749000C6033C /* AddPetViewModel.swift */; };
+		8E78F4772443749B00C6033C /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4762443749B00C6033C /* AddPetView.swift */; };
+		8E78F47B2443766F00C6033C /* ScrollingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F47A2443766F00C6033C /* ScrollingStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +56,35 @@
 		8E78F415243FD7D100C6033C /* DotVet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotVet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E78F418243FD7D100C6033C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E78F41A243FD7D100C6033C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E78F41C243FD7D100C6033C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8E78F41C243FD7D100C6033C /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		8E78F41E243FD7D100C6033C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		8E78F421243FD7D100C6033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E78F423243FD7D700C6033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E78F426243FD7D700C6033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E78F428243FD7D700C6033C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E78F42D243FD7D700C6033C /* DotVetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotVetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E78F431243FD7D700C6033C /* DotVetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotVetTests.swift; sourceTree = "<group>"; };
+		8E78F431243FD7D700C6033C /* PetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTests.swift; sourceTree = "<group>"; };
 		8E78F433243FD7D700C6033C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E78F438243FD7D700C6033C /* DotVetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotVetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E78F43C243FD7D800C6033C /* DotVetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotVetUITests.swift; sourceTree = "<group>"; };
 		8E78F43E243FD7D800C6033C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E78F44F2440DE6900C6033C /* PetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProtocol.swift; sourceTree = "<group>"; };
+		8E78F4512440DFB500C6033C /* SchemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeProtocol.swift; sourceTree = "<group>"; };
+		8E78F4532440EC1F00C6033C /* RegistryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryProtocol.swift; sourceTree = "<group>"; };
+		8E78F4552440ED5300C6033C /* OwnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProtocol.swift; sourceTree = "<group>"; };
+		8E78F4572440ED7700C6033C /* Veterinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Veterinary.swift; sourceTree = "<group>"; };
+		8E78F4592440F54700C6033C /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
+		8E78F45B2440F57700C6033C /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
+		8E78F4602440FCB800C6033C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8E78F462244104E200C6033C /* PreviewViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViews.swift; sourceTree = "<group>"; };
+		8E78F464244127F900C6033C /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
+		8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Constraints_ext.swift; sourceTree = "<group>"; };
+		8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPetNavigator.swift; sourceTree = "<group>"; };
+		8E78F46C24417E9700C6033C /* NavigationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocols.swift; sourceTree = "<group>"; };
+		8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControls_Combine+ext.swift"; sourceTree = "<group>"; };
+		8E78F4722443747B00C6033C /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		8E78F4742443749000C6033C /* AddPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewModel.swift; sourceTree = "<group>"; };
+		8E78F4762443749B00C6033C /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
+		8E78F47A2443766F00C6033C /* ScrollingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +135,14 @@
 		8E78F417243FD7D100C6033C /* DotVet */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F418243FD7D100C6033C /* AppDelegate.swift */,
-				8E78F41A243FD7D100C6033C /* SceneDelegate.swift */,
-				8E78F41C243FD7D100C6033C /* FirstViewController.swift */,
-				8E78F41E243FD7D100C6033C /* SecondViewController.swift */,
-				8E78F420243FD7D100C6033C /* Main.storyboard */,
-				8E78F423243FD7D700C6033C /* Assets.xcassets */,
-				8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */,
+				8E78F46B24417E8000C6033C /* Navigation */,
 				8E78F428243FD7D700C6033C /* Info.plist */,
+				8E78F45F2440FC6A00C6033C /* Helpers */,
+				8E78F44D2440CE0400C6033C /* Networking */,
+				8E78F44C2440CDF800C6033C /* Entities */,
+				8E78F44B2440CDD900C6033C /* Application */,
+				8E78F44A2440CDCC00C6033C /* Modules */,
+				8E78F45D2440F7F900C6033C /* Assets And Support */,
 			);
 			path = DotVet;
 			sourceTree = "<group>";
@@ -116,7 +150,7 @@
 		8E78F430243FD7D700C6033C /* DotVetTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F431243FD7D700C6033C /* DotVetTests.swift */,
+				8E78F431243FD7D700C6033C /* PetTests.swift */,
 				8E78F433243FD7D700C6033C /* Info.plist */,
 			);
 			path = DotVetTests;
@@ -129,6 +163,127 @@
 				8E78F43E243FD7D800C6033C /* Info.plist */,
 			);
 			path = DotVetUITests;
+			sourceTree = "<group>";
+		};
+		8E78F44A2440CDCC00C6033C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F4792443763E00C6033C /* ScrollView */,
+				8E78F45E2440F82000C6033C /* New Group */,
+				8E78F44E2440DE3200C6033C /* Pet */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8E78F44B2440CDD900C6033C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F418243FD7D100C6033C /* AppDelegate.swift */,
+				8E78F41A243FD7D100C6033C /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8E78F44C2440CDF800C6033C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F44F2440DE6900C6033C /* PetProtocol.swift */,
+				8E78F4512440DFB500C6033C /* SchemeProtocol.swift */,
+				8E78F4532440EC1F00C6033C /* RegistryProtocol.swift */,
+				8E78F4552440ED5300C6033C /* OwnerProtocol.swift */,
+				8E78F4572440ED7700C6033C /* Veterinary.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		8E78F44D2440CE0400C6033C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8E78F44E2440DE3200C6033C /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F46824417D5000C6033C /* Navigator */,
+				8E78F4712443686B00C6033C /* Add */,
+				8E78F4702443685600C6033C /* Main */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		8E78F45D2440F7F900C6033C /* Assets And Support */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F423243FD7D700C6033C /* Assets.xcassets */,
+				8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */,
+			);
+			path = "Assets And Support";
+			sourceTree = "<group>";
+		};
+		8E78F45E2440F82000C6033C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F41E243FD7D100C6033C /* SecondViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8E78F45F2440FC6A00C6033C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F4602440FCB800C6033C /* ViewModelType.swift */,
+				8E78F462244104E200C6033C /* PreviewViews.swift */,
+				8E78F464244127F900C6033C /* UIView+ext.swift */,
+				8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */,
+				8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8E78F46824417D5000C6033C /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		8E78F46B24417E8000C6033C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F46C24417E9700C6033C /* NavigationProtocols.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8E78F4702443685600C6033C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F41C243FD7D100C6033C /* PetViewController.swift */,
+				8E78F4592440F54700C6033C /* PetView.swift */,
+				8E78F45B2440F57700C6033C /* PetViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8E78F4712443686B00C6033C /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F4722443747B00C6033C /* AddPetViewController.swift */,
+				8E78F4742443749000C6033C /* AddPetViewModel.swift */,
+				8E78F4762443749B00C6033C /* AddPetView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		8E78F4792443763E00C6033C /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F47A2443766F00C6033C /* ScrollingStackView.swift */,
+			);
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +392,6 @@
 			files = (
 				8E78F427243FD7D700C6033C /* LaunchScreen.storyboard in Resources */,
 				8E78F424243FD7D700C6033C /* Assets.xcassets in Resources */,
-				8E78F422243FD7D100C6033C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +417,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E78F41F243FD7D100C6033C /* SecondViewController.swift in Sources */,
-				8E78F41D243FD7D100C6033C /* FirstViewController.swift in Sources */,
+				8E78F4542440EC1F00C6033C /* RegistryProtocol.swift in Sources */,
+				8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */,
+				8E78F4562440ED5300C6033C /* OwnerProtocol.swift in Sources */,
+				8E78F45A2440F54700C6033C /* PetView.swift in Sources */,
+				8E78F47B2443766F00C6033C /* ScrollingStackView.swift in Sources */,
+				8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */,
+				8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */,
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
+				8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */,
+				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
+				8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */,
+				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
+				8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */,
+				8E78F465244127F900C6033C /* UIView+ext.swift in Sources */,
+				8E78F46D24417E9700C6033C /* NavigationProtocols.swift in Sources */,
+				8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */,
+				8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */,
+				8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */,
+				8E78F4582440ED7700C6033C /* Veterinary.swift in Sources */,
+				8E78F4772443749B00C6033C /* AddPetView.swift in Sources */,
 				8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E78F432243FD7D700C6033C /* DotVetTests.swift in Sources */,
+				8E78F432243FD7D700C6033C /* PetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +473,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8E78F420243FD7D100C6033C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E78F421243FD7D100C6033C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
