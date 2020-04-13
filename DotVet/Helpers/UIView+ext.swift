@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Combine
 
 protocol AutoLayable: UIView {
     func withAutoLayout() -> Self
@@ -18,13 +17,4 @@ extension UIView: AutoLayable {
         self.translatesAutoresizingMaskIntoConstraints = false
         return self
     }
-}
-
-extension UIView {
-   func assign<Value>(
-       _ publisher: AnyPublisher<Value, Never>,
-       to key: ReferenceWritableKeyPath<UIView, Value>
-   ) -> AnyCancellable {
-       return publisher.assign(to: key, on: self)
-   }
 }

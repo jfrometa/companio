@@ -33,6 +33,11 @@
 		8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4742443749000C6033C /* AddPetViewModel.swift */; };
 		8E78F4772443749B00C6033C /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4762443749B00C6033C /* AddPetView.swift */; };
 		8E78F47B2443766F00C6033C /* ScrollingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F47A2443766F00C6033C /* ScrollingStackView.swift */; };
+		8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */; };
+		8EF2D0DA2443CA4F0056AEF5 /* Double_STRDate_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */; };
+		8EF2D0DC2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */; };
+		8EF2D0DE2443D7F70056AEF5 /* Date_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */; };
+		8EF2D0E02443F04B0056AEF5 /* UITextView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,11 @@
 		8E78F4742443749000C6033C /* AddPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewModel.swift; sourceTree = "<group>"; };
 		8E78F4762443749B00C6033C /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		8E78F47A2443766F00C6033C /* ScrollingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView.swift; sourceTree = "<group>"; };
+		8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_UIKit_ext.swift; sourceTree = "<group>"; };
+		8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_STRDate_ext.swift; sourceTree = "<group>"; };
+		8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView_DatePicker_ext.swift; sourceTree = "<group>"; };
+		8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_ext.swift; sourceTree = "<group>"; };
+		8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView_ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +248,11 @@
 				8E78F464244127F900C6033C /* UIView+ext.swift */,
 				8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */,
 				8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */,
+				8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */,
+				8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */,
+				8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */,
+				8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */,
+				8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -421,20 +436,25 @@
 				8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */,
 				8E78F4562440ED5300C6033C /* OwnerProtocol.swift in Sources */,
 				8E78F45A2440F54700C6033C /* PetView.swift in Sources */,
+				8EF2D0E02443F04B0056AEF5 /* UITextView_ext.swift in Sources */,
 				8E78F47B2443766F00C6033C /* ScrollingStackView.swift in Sources */,
 				8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */,
 				8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */,
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
 				8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */,
 				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
+				8EF2D0DC2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift in Sources */,
 				8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */,
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */,
+				8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */,
 				8E78F465244127F900C6033C /* UIView+ext.swift in Sources */,
+				8EF2D0DE2443D7F70056AEF5 /* Date_ext.swift in Sources */,
 				8E78F46D24417E9700C6033C /* NavigationProtocols.swift in Sources */,
 				8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */,
 				8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */,
 				8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */,
+				8EF2D0DA2443CA4F0056AEF5 /* Double_STRDate_ext.swift in Sources */,
 				8E78F4582440ED7700C6033C /* Veterinary.swift in Sources */,
 				8E78F4772443749B00C6033C /* AddPetView.swift in Sources */,
 				8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */,

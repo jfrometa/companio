@@ -17,21 +17,16 @@ class PetView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .white
+        setView()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didMoveToSuperview() {
-        setView()
-        setConstraints()
-    }
-
-    
     private func setView() {
+        self.backgroundColor = .white
         self.addSubview(btnAdd)
         
         //let keypayh: KeyPath<UIButton, Bool> = btnAdd[keyPath: \UIButton.isSelected]
@@ -40,12 +35,12 @@ class PetView: UIView {
     }
     
     private func setConstraints() {
-      guard let sv = self.superview else { return }
-        anchor(top: sv.safeTopAnchor,
-               leading: sv.leadingAnchor,
-               bottom: sv.safeBottomAnchor,
-               trailing: sv.trailingAnchor)
-        
+//      guard let sv = self.superview else { return }
+//        anchor(top: sv.safeTopAnchor,
+//               leading: sv.leadingAnchor,
+//               bottom: sv.safeBottomAnchor,
+//               trailing: sv.trailingAnchor)
+//        
         btnAdd.anchor(bottom: safeBottomAnchor,
                       centerX: centerXAnchor,
                       padding: .init(top: 0, left: 0, bottom: 40, right: 0))

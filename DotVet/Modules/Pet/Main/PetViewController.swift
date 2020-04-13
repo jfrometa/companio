@@ -24,7 +24,7 @@ class PetViewController: UIViewController {
     }
     
     override func loadView() {
-        self.mainView = PetView(frame: .zero)
+        self.mainView = PetView()
         self.view = mainView
     }
     

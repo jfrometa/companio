@@ -23,8 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           let navigationController = UINavigationController()
         
           let navigator = DefaultPetNavigator(navigationController: navigationController)
-          let vm = PetViewModel(navigator: navigator)
-          let vc = PetViewController(viewModel: vm)
+//          let vm = PetViewModel(navigator: navigator)
+//          let vc = PetViewController(viewModel: vm)
+        
+             let vm = AddPetViewModel(navigator: navigator)
+              let vc = AddPetViewController(viewModel: vm)
+              navigationController.pushViewController(vc, animated: true)
         
           navigationController.setViewControllers([vc], animated: false)
           self.window?.rootViewController = navigationController

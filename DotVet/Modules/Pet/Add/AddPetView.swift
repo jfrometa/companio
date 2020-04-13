@@ -7,129 +7,185 @@
 //
 
 import UIKit
+import Combine
 
 class AddPetView: UIView {
-//  public var formSubmitted = PublishSubject<[CardCacaoOrderRequestBuilder.keys: String]>()
-//  private let disposeBag = DisposeBag()
-
   private let stackView: ScrollingStackView = {
-    let stackView = ScrollingStackView().withAutoLayout()
-    stackView.spacing = 10
+    let stackView = ScrollingStackView()
+       .withAutoLayout()
+    
+    stackView.spacing = 20
+    stackView.layer.borderColor = UIColor.blue.cgColor
+    stackView.layer.borderWidth = 2
     return stackView
   }()
 
- // private var tfFullLegalNameController: MDCTextInputControllerUnderline?
-  private let tfFullLegalName: UITextField = {
+  private let tfName: UITextField = {
     let tf = UITextField().withAutoLayout()
- //   tf.setOrderCardStyle()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
+     tf.returnKeyType = .next
+     tf.placeholder = "name"
+    tf.autocorrectionType = .no
     return tf
   }()
 
-  //private var tfAddressLine1Controller: MDCTextInputControllerUnderline?
-  private let tfAddressLine1: UITextField = {
+  private let tfRace: UITextField = {
     let tf = UITextField().withAutoLayout()
-   // tf.setOrderCardStyle()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
+    tf.returnKeyType = .next
+    tf.placeholder = "Pitbul"
+    tf.autocorrectionType = .no
     return tf
   }()
 
- // private var tfAddressLine2Controller: MDCTextInputControllerUnderline?
-  private let tfAddressLine2: UITextField = {
+  private let tfPet: UITextField = {
     let tf = UITextField().withAutoLayout()
-   // tf.setOrderCardStyle()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
-   // tf.placeholder = "card.order_card.mailing_address.address_line_2".localized()
+    tf.returnKeyType = .next
+    tf.placeholder = "Dog"
+    tf.autocorrectionType = .no
     return tf
   }()
 
-  //private var tfPostalCodeController: UITextField?
-  private let tfPostalCode: UITextField = {
+  private let tfBirthDate: UITextField = {
     let tf = UITextField().withAutoLayout()
-    //tf.setOrderCardStyle()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
-  //  tf.placeholder = "card.order_card.mailing_address.postal_code".localized()
+    tf.setDatePickerAsTextInput()
+    tf.placeholder = "Birth Date"
+    tf.borderStyle = .roundedRect
+    tf.keyboardAppearance = .light
+    tf.returnKeyType = .done
+    tf.autocorrectionType = .no
     return tf
   }()
 
-  //private var tfCityController: MDCTextInputControllerUnderline?
   private let tfCity: UITextField = {
     let tf = UITextField().withAutoLayout()
-    //tf.setOrderCardStyle()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
-   // tf.placeholder = "card.order_card.mailing_address.city".localized()
+     tf.returnKeyType = .continue
+    tf.autocorrectionType = .no
     return tf
   }()
 
-  //private var tfCountryController: MDCTextInputControllerUnderline?
   private let tfCountry: UITextField = {
     let tf = UITextField().withAutoLayout()
-    tf.frame = CGRect(x: 0, y: 0, width: 0, height: 68)
+     tf.returnKeyType = .continue
     tf.isUserInteractionEnabled = false
     return tf
   }()
-
-  private var firstSectionSubtitle: UILabel = {
-    let lbl = UILabel().withAutoLayout()
+    
+    
+//    var name: String { get }
+//    var race: String? { get }
+//    var birthDate: String? { get }
+//    var address: String? { get }
+//    var owners: [String]? { get }
+//    var picture: String? { get }
+//    var weight: String? { get }
+  private var lblName: UILabel = {
+    let lbl = UILabel()
+        .withAutoLayout()
+    lbl.attributedText = "Name".formatTextWithFont(size: 22)
     lbl.numberOfLines = 0
     lbl.textAlignment = .center
 
     return lbl
   }()
 
-  private var secondSectionTitle: UILabel = {
+  private var lblRace: UILabel = {
     let lbl = UILabel().withAutoLayout()
     lbl.textAlignment = .center
     return lbl
   }()
 
   let btnContinue: UIButton = {
-    let btn = UIButton().withAutoLayout()
+    let btn = UIButton(type: .roundedRect).withAutoLayout()
+    btn.setTitle("Confirmar", for: .normal)
     btn.frame = CGRect(x: 0, y: 0, width: 271, height: 52)
     return btn
   }()
 
-
-   override init(frame: CGRect) {
-           super.init(frame:frame)
-         //  self.translatesAutoresizingMaskIntoConstraints = false
-           self.backgroundColor = .white
-   }
-    
-   override func didMoveToSuperview() {
-         setView()
-         setConstraints()
-   }
+  override init(frame: CGRect) {
+     super.init(frame:frame)
+     setView()
+     setConstraints()
+  }
 
   required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
   private func setView() {
-    backgroundColor = .white
+    self.backgroundColor = .white
+    self.addSubview(stackView)
+    self.addSubview(btnContinue)
     
-    stackView.addArrangedSubview(firstSectionSubtitle)
-    stackView.addArrangedSubview(tfFullLegalName)
-    stackView.addArrangedSubview(secondSectionTitle)
-    stackView.addArrangedSubview(tfAddressLine1)
-    stackView.addArrangedSubview(tfAddressLine2)
-    stackView.addArrangedSubview(tfPostalCode)
+    stackView.addArrangedSubview(lblName)
+    stackView.addArrangedSubview(tfName)
+    stackView.addArrangedSubview(lblRace)
+    stackView.addArrangedSubview(tfRace)
+    stackView.addArrangedSubview(tfPet)
+    stackView.addArrangedSubview(tfBirthDate)
     stackView.addArrangedSubview(tfCity)
     stackView.addArrangedSubview(tfCountry)
-
-    addSubview(stackView)
-    addSubview(btnContinue)
+    
+     let subscriber = Subscribers.Assign(object: tfName, keyPath: \.text)
+     NotificationCenter.default
+        .publisher(for: UITextField.textDidEndEditingNotification, object: tfName)
+        .map(\.object)
+        .map { ($0 as? UITextField) }
+        .map { $0?.text }
+        .handleEvents( receiveOutput: { [weak self] _ in
+            self?.tfPet.becomeFirstResponder()
+          // print("receiveOutput UITextField \($0 ?? "error")")
+         }, receiveCompletion: {
+           print("receiveCompletion \($0)")
+         }, receiveCancel: {
+           print("receiveCancel CANCEL")
+         })
+        .receive(on: DispatchQueue.main)
+        .subscribe(subscriber)
+        
+    
+    tfName.delegate = self
+    tfName.delegate = self
+    tfBirthDate.delegate = self
+    tfCity.delegate = self
+    tfBirthDate.delegate = self
+    tfCountry.delegate = self
   }
     
   private func setConstraints() {
-        guard let sv = self.superview else { return }
-//          self.anchor(top: sv.safeTopAnchor,
-//                 leading: sv.leadingAnchor,
-//                 bottom: sv.safeBottomAnchor,
-//                 trailing: sv.trailingAnchor)
-//
-//          btnAdd.anchor(bottom: safeBottomAnchor,
-//                        centerX: centerXAnchor,
-//                        padding: .init(top: 0, left: 0, bottom: 40, right: 0))
+     stackView.anchor(top: safeTopAnchor,
+                     leading: leadingAnchor,
+                     bottom: btnContinue.topAnchor,
+                     trailing: trailingAnchor,
+                     padding: .init(top: 20, left: 17, bottom: 20, right: 17))
+    
+      btnContinue.anchor(bottom: safeBottomAnchor,
+                       centerX: centerXAnchor,
+                       padding: .init(top: 0, left: 0, bottom: 40, right: 0),
+                       size: .init(width: 270, height: 52))
    }
+}
+
+extension AddPetView: UITextFieldDelegate {
+    
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      switch textField.returnKeyType {
+        case .next, .continue:
+            textField.endEditing(true)
+        default:
+            textField.resignFirstResponder()
+      }
+      return true
+   }
+
+    
+  func goToNextElement() {
+    guard let subViews = self.superview?.subviews else { return }
+          subViews
+            .forEach {
+                guard let nextResponder = $0.viewWithTag(self.tag)
+                    else {  print("klk not") ;return  }
+                
+                print("klk")
+              //  nextResponder.becomeFirstResponder()
+          }
+    }
 }
