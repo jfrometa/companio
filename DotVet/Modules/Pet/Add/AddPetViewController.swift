@@ -37,9 +37,14 @@ class AddPetViewController: UIViewController {
      let output = self.viewModel.transform(input: AddPetViewModel.Input(btnAddTap: btnControl))
 
      output.btnAddTapped
-       .map(\.isTouchInside)
-       .assign(to: \.isSelected, on: self.mainView.btnContinue)
-       .store(in: &cancellableBag)
+        .handleEvents(receiveOutput: { [weak self] _ in
+           print("regin")
+            self?.mainView.toglePlaceHolder()
+           self?.mainView.endEditing(true) })
+        
+        .map { _ in true }
+        .assign(to: \.isSelected, on: self.mainView.btnContinue)
+        .store(in: &cancellableBag)
   }
 }
 

@@ -9,14 +9,80 @@
 import UIKit
 import Combine
 
+
+
+//
+//extension AdjustableForKeyboard {
+//    NotificationCenter.default.addObserver(self,
+//                            selector: #selector(adjustForKeyboard),
+//                            name: UIResponder.keyboardWillHideNotification,
+//                            object: nil)
+//    NotificationCenter.default.addObserver(self,
+//                            selector: #selector(adjustForKeyboard),
+//                            name: UIResponder.keyboardWillChangeFrameNotification,
+//                            object: nil)
+//
+//    @objc func adjustForKeyboard(notification: Notification) {
+//        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+//
+//        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+//        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+//
+//        if notification.name == UIResponder.keyboardWillHideNotification {
+//            yourTextView.contentInset = .zero
+//        } else {
+//            yourTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+//        }
+//
+//        yourTextView.scrollIndicatorInsets = yourTextView.contentInset
+//
+//        let selectedRange = yourTextView.selectedRange
+//        yourTextView.scrollRangeToVisible(selectedRange)
+//    }
+//}
+protocol AdjustableForKeyboard: class {
+    func subscribeToKeyboard(store: inout Set<AnyCancellable>)
+}
+
+protocol FieldConnectable: AdjustableForKeyboard {
+   func connectTextFields()
+}
+extension ScrollingStackView: FieldConnectable {
+    func subscribeToKeyboard(store: inout Set<AnyCancellable>) {
+        let keyboardWillOpen = NotificationCenter
+            .default
+            .publisher(for: UIResponder.keyboardWillChangeFrameNotification)
+            .compactMap {$0.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? CGRect}
+          //  .map {$0.height}
+            .map { [unowned self] in return self.convert($0, from: self.window) }
+            .map {[unowned self] in return ($0.height - self.safeAreaInsets.bottom) }
+            .print()
+
+        let keyboardWillHide =  NotificationCenter
+            .default
+            .publisher(for: UIResponder.keyboardWillHideNotification)
+            .map { _ in CGFloat(0)}
+        
+        return Publishers
+          .Merge(keyboardWillOpen, keyboardWillHide)
+          .subscribe(on: RunLoop.main)
+          .assign(to: \UIScrollView.contentInset.bottom, on: self)
+          .store(in: &store)
+    }
+    
+    func connectTextFields() {
+        let textFields = arrangedSubviews.compactMap { $0 as? UITextField }
+        UITextField.connectNextKeyboardReturnKey(for : textFields)
+    }
+}
+
+
 class AddPetView: UIView {
   private let stackView: ScrollingStackView = {
     let stackView = ScrollingStackView()
        .withAutoLayout()
     
     stackView.spacing = 20
-    stackView.layer.borderColor = UIColor.blue.cgColor
-    stackView.layer.borderWidth = 2
     return stackView
   }()
 
@@ -38,6 +104,7 @@ class AddPetView: UIView {
 
   private let tfPet: UITextField = {
     let tf = UITextField().withAutoLayout()
+    tf.beginFloatingCursor(at: CGPoint(x: 2, y: 0))
     tf.returnKeyType = .next
     tf.placeholder = "Dog"
     tf.autocorrectionType = .no
@@ -69,14 +136,6 @@ class AddPetView: UIView {
     return tf
   }()
     
-    
-//    var name: String { get }
-//    var race: String? { get }
-//    var birthDate: String? { get }
-//    var address: String? { get }
-//    var owners: [String]? { get }
-//    var picture: String? { get }
-//    var weight: String? { get }
   private var lblName: UILabel = {
     let lbl = UILabel()
         .withAutoLayout()
@@ -109,6 +168,10 @@ class AddPetView: UIView {
   required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+    let text = UISTextField()
+    func toglePlaceHolder() {
+        text.isPlaceHolderHidden = false
+    }
 
   private func setView() {
     self.backgroundColor = .white
@@ -116,6 +179,10 @@ class AddPetView: UIView {
     self.addSubview(btnContinue)
     
     stackView.addArrangedSubview(lblName)
+    
+    
+    stackView.addArrangedSubview(text)
+    
     stackView.addArrangedSubview(tfName)
     stackView.addArrangedSubview(lblRace)
     stackView.addArrangedSubview(tfRace)
@@ -124,43 +191,38 @@ class AddPetView: UIView {
     stackView.addArrangedSubview(tfCity)
     stackView.addArrangedSubview(tfCountry)
     
-     let subscriber = Subscribers.Assign(object: tfName, keyPath: \.text)
-     NotificationCenter.default
-        .publisher(for: UITextField.textDidEndEditingNotification, object: tfName)
-        .map(\.object)
-        .map { ($0 as? UITextField) }
-        .map { $0?.text }
-        .handleEvents( receiveOutput: { [weak self] _ in
-            self?.tfPet.becomeFirstResponder()
-          // print("receiveOutput UITextField \($0 ?? "error")")
-         }, receiveCompletion: {
-           print("receiveCompletion \($0)")
-         }, receiveCancel: {
-           print("receiveCancel CANCEL")
-         })
-        .receive(on: DispatchQueue.main)
-        .subscribe(subscriber)
+    stackView.connectTextFields()
+//     let subscriber = Subscribers.Assign(object: tfName, keyPath: \.text)
+//     NotificationCenter.default
+//        .publisher(for: UITextField.textDidEndEditingNotification, object: tfName)
+//        .map(\.object)
+//        .map { ($0 as? UITextField) }
+//        .map { $0?.text }
+//        .handleEvents( receiveOutput: { [weak self] _ in
+//            self?.tfPet.becomeFirstResponder()
+//          // print("receiveOutput UITextField \($0 ?? "error")")
+//         }, receiveCompletion: {
+//           print("receiveCompletion \($0)")
+//         }, receiveCancel: {
+//           print("receiveCancel CANCEL")
+//         })
+//        .receive(on: DispatchQueue.main)
+//        .subscribe(subscriber)
         
-    
-    tfName.delegate = self
-    tfName.delegate = self
-    tfBirthDate.delegate = self
-    tfCity.delegate = self
-    tfBirthDate.delegate = self
-    tfCountry.delegate = self
   }
     
   private func setConstraints() {
-     stackView.anchor(top: safeTopAnchor,
+     stackView.constrain(top: btnContinue.bottomAnchor,
                      leading: leadingAnchor,
-                     bottom: btnContinue.topAnchor,
+                     bottom: safeBottomAnchor,
                      trailing: trailingAnchor,
                      padding: .init(top: 20, left: 17, bottom: 20, right: 17))
     
-      btnContinue.anchor(bottom: safeBottomAnchor,
-                       centerX: centerXAnchor,
-                       padding: .init(top: 0, left: 0, bottom: 40, right: 0),
-                       size: .init(width: 270, height: 52))
+    btnContinue.constrain(top: safeTopAnchor,
+                       leading: leadingAnchor,
+                        trailing: trailingAnchor,
+                        padding: .init(top: 0, left: 0, bottom: 10, right: 0),
+                        size: .init(width: 0, height: 52))
    }
 }
 
@@ -174,18 +236,18 @@ extension AddPetView: UITextFieldDelegate {
             textField.resignFirstResponder()
       }
       return true
-   }
+  }
 
     
-  func goToNextElement() {
-    guard let subViews = self.superview?.subviews else { return }
-          subViews
-            .forEach {
-                guard let nextResponder = $0.viewWithTag(self.tag)
-                    else {  print("klk not") ;return  }
-                
-                print("klk")
-              //  nextResponder.becomeFirstResponder()
-          }
-    }
+//  func goToNextElement() {
+//    guard let subViews = self.superview?.subviews else { return }
+//          subViews
+//            .forEach {
+//                guard let nextResponder = $0.viewWithTag(self.tag)
+//                    else {  print("klk not") ;return  }
+//
+//                print("klk")
+//              //  nextResponder.becomeFirstResponder()
+//          }
+//    }
 }

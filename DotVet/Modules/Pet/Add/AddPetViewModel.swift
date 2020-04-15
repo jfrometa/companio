@@ -28,7 +28,7 @@ class AddPetViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let tapped = input.btnAddTap
         .handleEvents( receiveOutput: { [weak self] _ in
-            self?.navigator.goToAddPet()
+          //  self?.navigator.goToAddPet()
             print("receiveOutput ")
         }, receiveCompletion: {
             print("receiveCompletion \($0)")

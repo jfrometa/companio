@@ -10,7 +10,6 @@
 		8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F418243FD7D100C6033C /* AppDelegate.swift */; };
 		8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41A243FD7D100C6033C /* SceneDelegate.swift */; };
 		8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41C243FD7D100C6033C /* PetViewController.swift */; };
-		8E78F41F243FD7D100C6033C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41E243FD7D100C6033C /* SecondViewController.swift */; };
 		8E78F424243FD7D700C6033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F423243FD7D700C6033C /* Assets.xcassets */; };
 		8E78F427243FD7D700C6033C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */; };
 		8E78F432243FD7D700C6033C /* PetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F431243FD7D700C6033C /* PetTests.swift */; };
@@ -27,7 +26,6 @@
 		8E78F465244127F900C6033C /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F464244127F900C6033C /* UIView+ext.swift */; };
 		8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */; };
 		8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */; };
-		8E78F46D24417E9700C6033C /* NavigationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46C24417E9700C6033C /* NavigationProtocols.swift */; };
 		8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */; };
 		8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4722443747B00C6033C /* AddPetViewController.swift */; };
 		8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4742443749000C6033C /* AddPetViewModel.swift */; };
@@ -38,6 +36,13 @@
 		8EF2D0DC2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */; };
 		8EF2D0DE2443D7F70056AEF5 /* Date_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */; };
 		8EF2D0E02443F04B0056AEF5 /* UITextView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */; };
+		8EF2D121244556C10056AEF5 /* NavigationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D120244556C10056AEF5 /* NavigationProtocols.swift */; };
+		8EF2D124244561490056AEF5 /* FormCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D123244561490056AEF5 /* FormCellView.swift */; };
+		8EF2D1262445615F0056AEF5 /* FormViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D1252445615F0056AEF5 /* FormViewBuilder.swift */; };
+		8EF2D129244565DB0056AEF5 /* UISTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D128244565DB0056AEF5 /* UISTextField.swift */; };
+		8EF2D12C244576100056AEF5 /* UITextField_Layer_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D12B244576100056AEF5 /* UITextField_Layer_ext.swift */; };
+		8EF2D12E244577540056AEF5 /* String_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D12D244577540056AEF5 /* String_ext.swift */; };
+		8EF2D130244577BC0056AEF5 /* UITextField_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +67,6 @@
 		8E78F418243FD7D100C6033C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E78F41A243FD7D100C6033C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8E78F41C243FD7D100C6033C /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
-		8E78F41E243FD7D100C6033C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8E78F423243FD7D700C6033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E78F426243FD7D700C6033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E78F428243FD7D700C6033C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +88,6 @@
 		8E78F464244127F900C6033C /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Constraints_ext.swift; sourceTree = "<group>"; };
 		8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPetNavigator.swift; sourceTree = "<group>"; };
-		8E78F46C24417E9700C6033C /* NavigationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocols.swift; sourceTree = "<group>"; };
 		8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControls_Combine+ext.swift"; sourceTree = "<group>"; };
 		8E78F4722443747B00C6033C /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		8E78F4742443749000C6033C /* AddPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewModel.swift; sourceTree = "<group>"; };
@@ -95,6 +98,13 @@
 		8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView_DatePicker_ext.swift; sourceTree = "<group>"; };
 		8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_ext.swift; sourceTree = "<group>"; };
 		8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView_ext.swift; sourceTree = "<group>"; };
+		8EF2D120244556C10056AEF5 /* NavigationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocols.swift; sourceTree = "<group>"; };
+		8EF2D123244561490056AEF5 /* FormCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellView.swift; sourceTree = "<group>"; };
+		8EF2D1252445615F0056AEF5 /* FormViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewBuilder.swift; sourceTree = "<group>"; };
+		8EF2D128244565DB0056AEF5 /* UISTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISTextField.swift; sourceTree = "<group>"; };
+		8EF2D12B244576100056AEF5 /* UITextField_Layer_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Layer_ext.swift; sourceTree = "<group>"; };
+		8EF2D12D244577540056AEF5 /* String_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_ext.swift; sourceTree = "<group>"; };
+		8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +155,6 @@
 		8E78F417243FD7D100C6033C /* DotVet */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F46B24417E8000C6033C /* Navigation */,
 				8E78F428243FD7D700C6033C /* Info.plist */,
 				8E78F45F2440FC6A00C6033C /* Helpers */,
 				8E78F44D2440CE0400C6033C /* Networking */,
@@ -178,8 +187,8 @@
 		8E78F44A2440CDCC00C6033C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F4792443763E00C6033C /* ScrollView */,
-				8E78F45E2440F82000C6033C /* New Group */,
+				8EF2D1272445653B0056AEF5 /* Styled Components */,
+				8EF2D11F2445566F0056AEF5 /* Navigators */,
 				8E78F44E2440DE3200C6033C /* Pet */,
 			);
 			path = Modules;
@@ -216,7 +225,6 @@
 		8E78F44E2440DE3200C6033C /* Pet */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F46824417D5000C6033C /* Navigator */,
 				8E78F4712443686B00C6033C /* Add */,
 				8E78F4702443685600C6033C /* Main */,
 			);
@@ -232,14 +240,6 @@
 			path = "Assets And Support";
 			sourceTree = "<group>";
 		};
-		8E78F45E2440F82000C6033C /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				8E78F41E243FD7D100C6033C /* SecondViewController.swift */,
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		8E78F45F2440FC6A00C6033C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,24 +253,11 @@
 				8EF2D0DB2443CFC10056AEF5 /* UITextView_DatePicker_ext.swift */,
 				8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */,
 				8EF2D0DF2443F04B0056AEF5 /* UITextView_ext.swift */,
+				8EF2D12B244576100056AEF5 /* UITextField_Layer_ext.swift */,
+				8EF2D12D244577540056AEF5 /* String_ext.swift */,
+				8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		8E78F46824417D5000C6033C /* Navigator */ = {
-			isa = PBXGroup;
-			children = (
-				8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */,
-			);
-			path = Navigator;
-			sourceTree = "<group>";
-		};
-		8E78F46B24417E8000C6033C /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				8E78F46C24417E9700C6033C /* NavigationProtocols.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		8E78F4702443685600C6033C /* Main */ = {
@@ -299,6 +286,42 @@
 				8E78F47A2443766F00C6033C /* ScrollingStackView.swift */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		8EF2D11F2445566F0056AEF5 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */,
+				8EF2D120244556C10056AEF5 /* NavigationProtocols.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		8EF2D1222445611B0056AEF5 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D123244561490056AEF5 /* FormCellView.swift */,
+				8EF2D1252445615F0056AEF5 /* FormViewBuilder.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		8EF2D1272445653B0056AEF5 /* Styled Components */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D12A244565E30056AEF5 /* Text Field */,
+				8E78F4792443763E00C6033C /* ScrollView */,
+				8EF2D1222445611B0056AEF5 /* Form */,
+			);
+			path = "Styled Components";
+			sourceTree = "<group>";
+		};
+		8EF2D12A244565E30056AEF5 /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D128244565DB0056AEF5 /* UISTextField.swift */,
+			);
+			path = "Text Field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,15 +454,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E78F41F243FD7D100C6033C /* SecondViewController.swift in Sources */,
 				8E78F4542440EC1F00C6033C /* RegistryProtocol.swift in Sources */,
+				8EF2D12E244577540056AEF5 /* String_ext.swift in Sources */,
 				8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */,
 				8E78F4562440ED5300C6033C /* OwnerProtocol.swift in Sources */,
 				8E78F45A2440F54700C6033C /* PetView.swift in Sources */,
+				8EF2D121244556C10056AEF5 /* NavigationProtocols.swift in Sources */,
 				8EF2D0E02443F04B0056AEF5 /* UITextView_ext.swift in Sources */,
+				8EF2D130244577BC0056AEF5 /* UITextField_ext.swift in Sources */,
 				8E78F47B2443766F00C6033C /* ScrollingStackView.swift in Sources */,
 				8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */,
 				8E78F4752443749000C6033C /* AddPetViewModel.swift in Sources */,
+				8EF2D1262445615F0056AEF5 /* FormViewBuilder.swift in Sources */,
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
 				8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */,
 				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
@@ -450,13 +476,15 @@
 				8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */,
 				8E78F465244127F900C6033C /* UIView+ext.swift in Sources */,
 				8EF2D0DE2443D7F70056AEF5 /* Date_ext.swift in Sources */,
-				8E78F46D24417E9700C6033C /* NavigationProtocols.swift in Sources */,
 				8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */,
 				8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */,
 				8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */,
+				8EF2D12C244576100056AEF5 /* UITextField_Layer_ext.swift in Sources */,
+				8EF2D124244561490056AEF5 /* FormCellView.swift in Sources */,
 				8EF2D0DA2443CA4F0056AEF5 /* Double_STRDate_ext.swift in Sources */,
 				8E78F4582440ED7700C6033C /* Veterinary.swift in Sources */,
 				8E78F4772443749B00C6033C /* AddPetView.swift in Sources */,
+				8EF2D129244565DB0056AEF5 /* UISTextField.swift in Sources */,
 				8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

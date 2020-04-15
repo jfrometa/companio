@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PetNavigator: UINavigator {
+protocol PetNavigator: class, UINavigator {
     func goToAddPet()
 }
 
@@ -22,7 +22,8 @@ class DefaultPetNavigator: PetNavigator {
     func goToAddPet() {
         let vm = AddPetViewModel(navigator: self)
         let vc = AddPetViewController(viewModel: vm)
-        navigationController.pushViewController(vc, animated: true)
+        self.navigationController.pushViewController(vc, animated: true)
     }
- 
 }
+
+

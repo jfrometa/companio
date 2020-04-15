@@ -41,7 +41,7 @@ class PetView: UIView {
 //               bottom: sv.safeBottomAnchor,
 //               trailing: sv.trailingAnchor)
 //        
-        btnAdd.anchor(bottom: safeBottomAnchor,
+        btnAdd.constrain(bottom: safeBottomAnchor,
                       centerX: centerXAnchor,
                       padding: .init(top: 0, left: 0, bottom: 40, right: 0))
     }

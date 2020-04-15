@@ -14,7 +14,7 @@ extension UIView {
     var safeLeadingAnchor: NSLayoutXAxisAnchor { self.safeAreaLayoutGuide.leadingAnchor }
     var safeTrailingAnchor: NSLayoutXAxisAnchor { self.safeAreaLayoutGuide.trailingAnchor }
     
-    func anchor(top: NSLayoutYAxisAnchor? = nil, leading:NSLayoutXAxisAnchor? = nil,
+    func constrain(top: NSLayoutYAxisAnchor? = nil, leading:NSLayoutXAxisAnchor? = nil,
                bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil,
                centerX: NSLayoutXAxisAnchor? = nil, centerY: NSLayoutYAxisAnchor? = nil,
                padding: UIEdgeInsets = .zero,  size: CGSize = .zero) {

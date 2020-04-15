@@ -9,8 +9,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.initApp(with: scene)
     }
@@ -20,15 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
          self.window?.windowScene = windowScene
          
-          let navigationController = UINavigationController()
+         let navigationController = UINavigationController()
+         let navigator = DefaultNavigatonComposer
+                 .build(navigationController: navigationController)
+                 .getDefaultPetNavigator()
         
-          let navigator = DefaultPetNavigator(navigationController: navigationController)
-//          let vm = PetViewModel(navigator: navigator)
-//          let vc = PetViewController(viewModel: vm)
-        
-             let vm = AddPetViewModel(navigator: navigator)
-              let vc = AddPetViewController(viewModel: vm)
-              navigationController.pushViewController(vc, animated: true)
+          let vm = AddPetViewModel(navigator: navigator)
+          let vc = AddPetViewController(viewModel: vm)
         
           navigationController.setViewControllers([vc], animated: false)
           self.window?.rootViewController = navigationController
