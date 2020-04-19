@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents
 
 protocol ToolBarable: UIView {
     func setKeyboardToolBar(target: Any)
@@ -15,7 +16,7 @@ protocol ToolBarable: UIView {
     var tapDone: Selector { get }
 }
 
-extension UITextField : ToolBarable {
+extension MDCTextField: ToolBarable {
     var tapCancel: Selector { #selector(cancel) }
     var tapDone: Selector { #selector(done) }
     
@@ -60,11 +61,9 @@ extension UITextField : ToolBarable {
         datePicker.date = prevDate
         self.inputView = datePicker
     }
-
     @objc fileprivate func cancel() {
        self.resignFirstResponder()
     }
-      
     @objc fileprivate func done() {
         guard let datePicker = self.inputView as? UIDatePicker
         else { return }

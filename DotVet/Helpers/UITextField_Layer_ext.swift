@@ -6,9 +6,9 @@
 //  Copyright © 2020 Upgrade. All rights reserved.
 //
 
-import UIKit
+import MaterialComponents
 
-extension UITextField{
+extension MDCTextField {
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius

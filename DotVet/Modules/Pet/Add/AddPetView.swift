@@ -19,71 +19,33 @@ class AddPetView: UIView {
     return stackView
   }()
 
-  private let tfName: UITextField = {
-    let tf = UITextField().withAutoLayout()
-     tf.returnKeyType = .next
-     tf.placeholder = "name"
-    tf.autocorrectionType = .no
-    return tf
+    
+  private let tfFormRowView: FormRowView = {
+    let tf = FormRowView(viewModel: nil).withAutoLayout()
+      tf.returnKeyType = .next
+      tf.backgroundColor = .red
+      return tf
   }()
-
-  private let tfRace: UITextField = {
-    let tf = UITextField().withAutoLayout()
-    tf.returnKeyType = .next
-    tf.placeholder = "Pitbul"
-    tf.autocorrectionType = .no
-    return tf
-  }()
-
+    
   private let tfPet: MDCTextField = {
     
     let tf = MDCTextField().withAutoLayout()
     tf.beginFloatingCursor(at: CGPoint(x: 2, y: 0))
     tf.returnKeyType = .next
+    tf.backgroundColor = .green
     tf.placeholder = "Dog"
     tf.autocorrectionType = .no
     return tf
   }()
 
-  private let tfBirthDate: UITextField = {
-    let tf = UITextField().withAutoLayout()
+  private let tfBirthDate: MDCTextField = {
+    let tf = MDCTextField().withAutoLayout()
     tf.setDatePickerAsTextInput()
     tf.placeholder = "Birth Date"
-    tf.borderStyle = .roundedRect
     tf.keyboardAppearance = .light
     tf.returnKeyType = .done
     tf.autocorrectionType = .no
     return tf
-  }()
-
-  private let tfCity: UITextField = {
-    let tf = UITextField().withAutoLayout()
-     tf.returnKeyType = .continue
-    tf.autocorrectionType = .no
-    return tf
-  }()
-
-  private let tfCountry: UITextField = {
-    let tf = UITextField().withAutoLayout()
-     tf.returnKeyType = .continue
-    tf.isUserInteractionEnabled = false
-    return tf
-  }()
-    
-  private var lblName: UILabel = {
-    let lbl = UILabel()
-        .withAutoLayout()
-    lbl.attributedText = "Name".formatTextWithFont(size: 22)
-    lbl.numberOfLines = 0
-    lbl.textAlignment = .center
-
-    return lbl
-  }()
-
-  private var lblRace: UILabel = {
-    let lbl = UILabel().withAutoLayout()
-    lbl.textAlignment = .center
-    return lbl
   }()
 
   let btnContinue: UIButton = {
@@ -110,14 +72,9 @@ class AddPetView: UIView {
     self.addSubview(stackView)
     self.addSubview(btnContinue)
     
-    stackView.addArrangedSubview(lblName)
-    stackView.addArrangedSubview(tfName)
-    stackView.addArrangedSubview(lblRace)
-    stackView.addArrangedSubview(tfRace)
+    stackView.addArrangedSubview(tfFormRowView)
     stackView.addArrangedSubview(tfPet)
     stackView.addArrangedSubview(tfBirthDate)
-    stackView.addArrangedSubview(tfCity)
-    stackView.addArrangedSubview(tfCountry)
     
     stackView.connectTextFields()
 //     let subscriber = Subscribers.Assign(object: tfName, keyPath: \.text)
