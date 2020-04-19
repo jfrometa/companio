@@ -38,10 +38,9 @@ class AddPetViewController: UIViewController {
 
      output.btnAddTapped
         .handleEvents(receiveOutput: { [weak self] _ in
-           print("regin")
-            self?.mainView.toglePlaceHolder()
-           self?.mainView.endEditing(true) })
-        
+           print("print AddPetViewController")
+            //self?.mainView.endEditing(true)
+        })
         .map { _ in true }
         .assign(to: \.isSelected, on: self.mainView.btnContinue)
         .store(in: &cancellableBag)

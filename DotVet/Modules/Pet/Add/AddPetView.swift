@@ -8,74 +8,7 @@
 
 import UIKit
 import Combine
-
-
-
-//
-//extension AdjustableForKeyboard {
-//    NotificationCenter.default.addObserver(self,
-//                            selector: #selector(adjustForKeyboard),
-//                            name: UIResponder.keyboardWillHideNotification,
-//                            object: nil)
-//    NotificationCenter.default.addObserver(self,
-//                            selector: #selector(adjustForKeyboard),
-//                            name: UIResponder.keyboardWillChangeFrameNotification,
-//                            object: nil)
-//
-//    @objc func adjustForKeyboard(notification: Notification) {
-//        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-//
-//        let keyboardScreenEndFrame = keyboardValue.cgRectValue
-//        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-//
-//        if notification.name == UIResponder.keyboardWillHideNotification {
-//            yourTextView.contentInset = .zero
-//        } else {
-//            yourTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
-//        }
-//
-//        yourTextView.scrollIndicatorInsets = yourTextView.contentInset
-//
-//        let selectedRange = yourTextView.selectedRange
-//        yourTextView.scrollRangeToVisible(selectedRange)
-//    }
-//}
-protocol AdjustableForKeyboard: class {
-    func subscribeToKeyboard(store: inout Set<AnyCancellable>)
-}
-
-protocol FieldConnectable: AdjustableForKeyboard {
-   func connectTextFields()
-}
-extension ScrollingStackView: FieldConnectable {
-    func subscribeToKeyboard(store: inout Set<AnyCancellable>) {
-        let keyboardWillOpen = NotificationCenter
-            .default
-            .publisher(for: UIResponder.keyboardWillChangeFrameNotification)
-            .compactMap {$0.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? CGRect}
-          //  .map {$0.height}
-            .map { [unowned self] in return self.convert($0, from: self.window) }
-            .map {[unowned self] in return ($0.height - self.safeAreaInsets.bottom) }
-            .print()
-
-        let keyboardWillHide =  NotificationCenter
-            .default
-            .publisher(for: UIResponder.keyboardWillHideNotification)
-            .map { _ in CGFloat(0)}
-        
-        return Publishers
-          .Merge(keyboardWillOpen, keyboardWillHide)
-          .subscribe(on: RunLoop.main)
-          .assign(to: \UIScrollView.contentInset.bottom, on: self)
-          .store(in: &store)
-    }
-    
-    func connectTextFields() {
-        let textFields = arrangedSubviews.compactMap { $0 as? UITextField }
-        UITextField.connectNextKeyboardReturnKey(for : textFields)
-    }
-}
-
+import MaterialComponents
 
 class AddPetView: UIView {
   private let stackView: ScrollingStackView = {
@@ -102,8 +35,9 @@ class AddPetView: UIView {
     return tf
   }()
 
-  private let tfPet: UITextField = {
-    let tf = UITextField().withAutoLayout()
+  private let tfPet: MDCTextField = {
+    
+    let tf = MDCTextField().withAutoLayout()
     tf.beginFloatingCursor(at: CGPoint(x: 2, y: 0))
     tf.returnKeyType = .next
     tf.placeholder = "Dog"
@@ -168,10 +102,8 @@ class AddPetView: UIView {
   required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-    let text = UISTextField()
-    func toglePlaceHolder() {
-        text.isPlaceHolderHidden = false
-    }
+    
+
 
   private func setView() {
     self.backgroundColor = .white
@@ -179,10 +111,6 @@ class AddPetView: UIView {
     self.addSubview(btnContinue)
     
     stackView.addArrangedSubview(lblName)
-    
-    
-    stackView.addArrangedSubview(text)
-    
     stackView.addArrangedSubview(tfName)
     stackView.addArrangedSubview(lblRace)
     stackView.addArrangedSubview(tfRace)

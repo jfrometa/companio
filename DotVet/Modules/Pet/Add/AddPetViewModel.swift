@@ -9,7 +9,6 @@
 import UIKit
 import Combine
 
-
 class AddPetViewModel: ViewModelType {
     struct Input {
         let btnAddTap: UIControlPublisher<UIControl>
@@ -28,7 +27,6 @@ class AddPetViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let tapped = input.btnAddTap
         .handleEvents( receiveOutput: { [weak self] _ in
-          //  self?.navigator.goToAddPet()
             print("receiveOutput ")
         }, receiveCompletion: {
             print("receiveCompletion \($0)")
