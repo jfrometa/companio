@@ -18,7 +18,7 @@ extension MDCTextField {
             layer.masksToBounds = newValue > 0
         }
     }
-    
+
     var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -27,17 +27,17 @@ extension MDCTextField {
             layer.borderWidth = newValue
         }
     }
-    
+
     var borderColor: UIColor? {
         get {
-            let color = UIColor.init(cgColor: layer.borderColor!)
+            let color = UIColor(cgColor: layer.borderColor!)
             return color
         }
         set {
             layer.borderColor = newValue?.cgColor
         }
     }
-    
+
     var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius

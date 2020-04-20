@@ -9,10 +9,10 @@
 import UIKit
 
 extension String {
-  func formatTextWithFont(size: CGFloat = 16, color: UIColor = .black) -> NSMutableAttributedString {
-      return NSMutableAttributedString(string: self, attributes: [
-        .font:  UIFont.systemFont(ofSize: size),
-        .foregroundColor: color,
-      ])
-  }
+    func formatTextWithFont(size: CGFloat = 16, color: UIColor = .black) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: self, attributes: [
+            .font: UIFont.systemFont(ofSize: size),
+            .foregroundColor: color,
+        ])
+    }
 }

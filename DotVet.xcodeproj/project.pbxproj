@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		54007222BCEB3BDAC0FA4959 /* Pods_DotVetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1593A34421F4EAF14A995002 /* Pods_DotVetTests.framework */; };
 		8E2CBB09244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */; };
-		8E2CBB0B244CEC7A00E4832F /* MDCTextField_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0A244CEC7A00E4832F /* MDCTextField_ext.swift */; };
+		8E2CBB0B244CEC7A00E4832F /* MDCTextField_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */; };
 		8E2CBB0D244CEFEF00E4832F /* FormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0C244CEFEF00E4832F /* FormCellViewModel.swift */; };
 		8E543951244BB3970076A2CC /* ScrollingStackView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */; };
 		8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F418243FD7D100C6033C /* AppDelegate.swift */; };
@@ -75,7 +75,7 @@
 		5DC6B793D4106B9D20AA444E /* Pods_DotVet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotVet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866AAF84D8F843DD84F28BB2 /* Pods-DotVet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotVet.release.xcconfig"; path = "Target Support Files/Pods-DotVet/Pods-DotVet.release.xcconfig"; sourceTree = "<group>"; };
 		8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextInputControllerUnderline_ext.swift; sourceTree = "<group>"; };
-		8E2CBB0A244CEC7A00E4832F /* MDCTextField_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField_ext.swift; sourceTree = "<group>"; };
+		8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField_Combine_ext.swift; sourceTree = "<group>"; };
 		8E2CBB0C244CEFEF00E4832F /* FormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellViewModel.swift; sourceTree = "<group>"; };
 		8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView_ext.swift; sourceTree = "<group>"; };
 		8E70A7026382F7921A82BA01 /* Pods-DotVetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotVetUITests.release.xcconfig"; path = "Target Support Files/Pods-DotVetUITests/Pods-DotVetUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 				8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */,
 				8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */,
 				8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */,
-				8E2CBB0A244CEC7A00E4832F /* MDCTextField_ext.swift */,
+				8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -606,7 +606,7 @@
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */,
 				8E2CBB0D244CEFEF00E4832F /* FormCellViewModel.swift in Sources */,
-				8E2CBB0B244CEC7A00E4832F /* MDCTextField_ext.swift in Sources */,
+				8E2CBB0B244CEC7A00E4832F /* MDCTextField_Combine_ext.swift in Sources */,
 				8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */,
 				8E78F465244127F900C6033C /* UIView+ext.swift in Sources */,
 				8EF2D0DE2443D7F70056AEF5 /* Date_ext.swift in Sources */,

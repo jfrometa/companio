@@ -10,22 +10,18 @@ import Foundation
 import SwiftUI
 
 struct ControllerPreview: PreviewProvider, UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> PetViewController {
+    func makeUIViewController(context _: Context) -> PetViewController {
         let navigator = DefaultPetNavigator(navigationController: UINavigationController())
         let vm = PetViewModel(navigator: navigator)
         let vc = PetViewController(viewModel: vm)
         return vc
     }
-    
-    func updateUIViewController(_ uiViewController: PetViewController, context: Context) {
-        
-    }
-    
+
+    func updateUIViewController(_: PetViewController, context _: Context) {}
+
     static var previews: some View {
         ControllerPreview()
     }
-    
+
     typealias UIViewControllerType = PetViewController
-    
-    
 }

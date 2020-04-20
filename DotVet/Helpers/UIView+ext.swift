@@ -14,7 +14,7 @@ protocol AutoLayable: UIView {
 
 extension UIView: AutoLayable {
     func withAutoLayout() -> Self {
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
         return self
     }
 }

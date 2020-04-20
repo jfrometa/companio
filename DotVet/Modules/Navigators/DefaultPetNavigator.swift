@@ -14,16 +14,14 @@ protocol PetNavigator: class, UINavigator {
 
 class DefaultPetNavigator: PetNavigator {
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     func goToAddPet() {
         let vm = AddPetViewModel(navigator: self)
         let vc = AddPetViewController(viewModel: vm)
-        self.navigationController.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
-
-

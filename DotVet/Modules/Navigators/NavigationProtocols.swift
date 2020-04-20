@@ -20,11 +20,11 @@ protocol NavigationComposer: class {
 class DefaultNavigatonComposer: NavigationComposer {
     static var shared: NavigationComposer?
     private let navigationController: UINavigationController
-    
-    private init(navigationController: UINavigationController){
+
+    private init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     @discardableResult
     static func build(navigationController: UINavigationController) -> NavigationComposer {
         if let composer = self.shared {
@@ -33,15 +33,15 @@ class DefaultNavigatonComposer: NavigationComposer {
             return DefaultNavigatonComposer(navigationController: navigationController)
         }
     }
-    
+
     private var defaultPetNavigator: PetNavigator?
     func getDefaultPetNavigator() -> PetNavigator {
         if let navigator = defaultPetNavigator {
             return navigator
         } else {
-            let navigator =  DefaultPetNavigator(navigationController: self.navigationController)
-            self.defaultPetNavigator = navigator
+            let navigator = DefaultPetNavigator(navigationController: navigationController)
+            defaultPetNavigator = navigator
             return navigator
-       }
+        }
     }
 }

@@ -19,11 +19,10 @@ protocol Pet {
 }
 
 struct Dog: Pet {
-    
     init(name: String) {
         self.name = name
     }
-    
+
     var name: String
     var race: String?
     var birthDate: String?

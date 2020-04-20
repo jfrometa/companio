@@ -9,15 +9,11 @@
 import Foundation
 
 struct FormViewModel: ViewModelType {
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    func transform(input: Input) -> Output {
+    struct Input {}
+
+    struct Output {}
+
+    func transform(input _: Input) -> Output {
         Output()
     }
 }

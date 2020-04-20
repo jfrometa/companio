@@ -6,22 +6,22 @@
 ////  Copyright © 2020 Upgrade. All rights reserved.
 ////
 //
-//import UIKit
+// import UIKit
 //
-//protocol NextableView: UITextFieldDelegate { }
-//extension UITextField: NextableView {}
+// protocol NextableView: UITextFieldDelegate { }
+// extension UITextField: NextableView {}
 //
-//extension NextableView where Self == UITextField {
+// extension NextableView where Self == UITextField {
 //    func setDeletgate(_ delegate: UITextFieldDelegate) {
 //        self.delegate = delegate
 //    }
-//    
+//
 //    func setNextTextField(_ field: UITextField) {
 //        field.becomeFirstResponder()
 //    }
-//    
+//
 //   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//    
+//
 //    if textField.returnKeyType == .next {
 //        self.goToNextElement()
 //    }else{
@@ -29,7 +29,7 @@
 //    }
 //        return true
 //    }
-//    
+//
 //  func goToNextElement() {
 //        self.superview?
 //            .subviews
@@ -41,4 +41,4 @@
 //                nextResponder.becomeFirstResponder()
 //            }
 //    }
-//}
+// }
