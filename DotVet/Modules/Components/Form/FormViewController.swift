@@ -8,21 +8,17 @@ import Combine
 //
 import UIKit
 
-class AddPetViewController: UIViewController {
+class FormViewController: UIViewController {
     private var mainView: FormView
-    private let viewModel: AddPetViewModel
+    private let viewModel: FormAddPetViewModel
     private var cancellableBag = Set<AnyCancellable>()
     private var dataSource: FormViewDataSource
     
-    init(viewModel: AddPetViewModel) {
+    init(viewModel: FormAddPetViewModel) {
         self.viewModel = viewModel
         self.mainView = FormView(frame: .zero)
-        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER",
-                                                items: [TextFieldCellViewModel.Mocked(),
-                                                        TextFieldCellViewModel.Mocked(),
-                                                        TextFieldCellViewModel.Mocked(),
-                                                        TextFieldCellViewModel.Mocked()])
         self.dataSource = FormViewDataSource()
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -33,7 +29,6 @@ class AddPetViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = self.mainView
-      
     }
 
     override func viewDidLoad() {
@@ -46,21 +41,16 @@ class AddPetViewController: UIViewController {
                                                     TextFieldCellViewModel.Mocked(),
                                                     TextFieldCellViewModel.Mocked2()])
         
-        let mocked2 = FormTextFieldSectionModel(header: "TITLE/HEADER  !!",
-        items: [TextFieldCellViewModel.Mocked2(),
-                TextFieldCellViewModel.Mocked(),
-                TextFieldCellViewModel.Mocked(),
-                TextFieldCellViewModel.Mocked()])
-        
-        self.dataSource.update([mocked] + [mocked2])
+        self.dataSource.update([mocked])
         self.mainView.tableView.dataSource = self.dataSource
         self.mainView.tableView.delegate = self.dataSource
+        self.mainView.tableView.reloadData()
     }
     
 
     private func bindViewModel() {
         let btnControl = mainView.btnContinue.publisher(for: [.touchUpInside])
-        let output = viewModel.transform(input: AddPetViewModel.Input(btnAddTap: btnControl))
+        let output = viewModel.transform(input: FormAddPetViewModel.Input(btnAddTap: btnControl))
 
         output.btnAddTapped
             .handleEvents(receiveOutput: { [weak self] _ in

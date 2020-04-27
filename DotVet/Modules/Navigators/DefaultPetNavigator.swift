@@ -20,8 +20,8 @@ class DefaultPetNavigator: PetNavigator {
     }
 
     func goToAddPet() {
-        let vm = AddPetViewModel(navigator: self)
-        let vc = AddPetViewController(viewModel: vm)
+        let vm = FormAddPetViewModel(navigator: self)
+        let vc = FormViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 }

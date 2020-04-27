@@ -29,7 +29,10 @@ class FormView: UIView {
 
   private func setView() {
     self.backgroundColor = .white
+    let data = TitleAndMessage(title: "Header Title", message: "Message")
+    let tableViewHeader = FormTableViewHeaderView(data: data)
     
+    self.tableView.tableHeaderView = tableViewHeader
     self.tableView.backgroundColor = .white
     self.tableView.separatorStyle = .none
     self.tableView.register(TextFieldCellView.self,

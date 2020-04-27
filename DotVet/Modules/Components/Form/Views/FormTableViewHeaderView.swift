@@ -38,7 +38,20 @@ class FormTableViewHeaderView: UIView {
     self.addSubview(title)
     self.addSubview(subtitle)
     self.backgroundColor = .clear
+    
+    self.title
+    .constrain(top: safeTopAnchor,
+        leading: safeLeadingAnchor,
+        trailing: safeTrailingAnchor,
+        padding: .init(top: 8, left: 38, bottom: 0, right: 38))
 
+    self.subtitle
+        .constrain(top: title.safeTopAnchor,
+        leading: safeLeadingAnchor,
+        bottom: safeBottomAnchor,
+        trailing: safeTrailingAnchor,
+        padding: .init(top: 8, left: 38, bottom: 20, right: 38))
+    
 //    constrain(self.title, self.subtitle) { title, subtitle in
 //       guard let sv = title.superview else { return }
 //       sv.height >= frame.height

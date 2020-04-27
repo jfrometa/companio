@@ -73,7 +73,7 @@ class TextFieldCellView: UITableViewCell {
                 leading: safeLeadingAnchor,
                 bottom: safeBottomAnchor,
                 trailing: safeTrailingAnchor,
-                padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+                padding: .init(top: 0, left: 20, bottom: 0, right: 20))
     }
 
     private func subscribeEvents() {

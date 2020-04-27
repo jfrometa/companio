@@ -9,7 +9,7 @@
 import Combine
 import UIKit
 
-class AddPetViewModel: ViewModelType {
+class FormAddPetViewModel: ViewModelType {
     struct Input {
         let btnAddTap: UIControlPublisher<UIControl>
     }
@@ -27,7 +27,7 @@ class AddPetViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let tapped = input.btnAddTap
             .handleEvents(receiveOutput: { [weak self] _ in
-                print("receiveOutput ")
+                print("receiveOutput add pet viewmodel")
             }, receiveCompletion: {
                 print("receiveCompletion \($0)")
             }, receiveCancel: {

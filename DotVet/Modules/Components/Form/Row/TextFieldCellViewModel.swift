@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class TextFieldCellViewModel: ViewModelType {
+struct TextFieldCellViewModel: ViewModelType {
     struct Input {}
     struct Output {}
 
@@ -44,7 +44,7 @@ class TextFieldCellViewModel: ViewModelType {
         Output()
     }
     
-    class func Mocked() -> TextFieldCellViewModel {
+    static func Mocked() -> TextFieldCellViewModel {
         return TextFieldCellViewModel(title: "TITLE",
                  defaultValue: "defaultValue",
                  placeHolder: "placeHolder",
@@ -57,7 +57,7 @@ class TextFieldCellViewModel: ViewModelType {
                  maxInput: 10)
     }
     
-    class func Mocked2() -> TextFieldCellViewModel {
+    static func Mocked2() -> TextFieldCellViewModel {
          return TextFieldCellViewModel(title: "TITLE",
                   defaultValue: "defaultValue",
                   placeHolder: "placeHolder",

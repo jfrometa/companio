@@ -16,7 +16,6 @@ class TitleLabelView: UIView {
 
     title.attributedText = message.formatTextWithFont()
     header.addSubview(title)
-    header.backgroundColor = .red
     
     addSubview(header)
     
