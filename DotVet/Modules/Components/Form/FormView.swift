@@ -45,7 +45,7 @@ class FormView: UIView {
         self.tableView.constrain(top: self.topAnchor,
                               leading: self.leadingAnchor,
                               trailing: self.trailingAnchor,
-                              padding: .init(top: 0, left: 20, bottom: 20, right: 20))
+                              padding: .init(top: 0, left: 0, bottom: 0, right: 0))
 
         self.btnContinue.constrain(top: tableView.bottomAnchor,
                               leading: leadingAnchor,

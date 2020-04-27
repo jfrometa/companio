@@ -73,7 +73,7 @@ class TextFieldCellView: UITableViewCell {
                 leading: safeLeadingAnchor,
                 bottom: safeBottomAnchor,
                 trailing: safeTrailingAnchor,
-                padding: .init(top: 0, left: 10, bottom: -15, right: 0))
+                padding: .init(top: 0, left: 0, bottom: 0, right: 0))
     }
 
     private func subscribeEvents() {
@@ -110,6 +110,7 @@ extension TextFieldCellView {
                             errorMessage: "errorMessage",
                             store: &cancelableBag,
                             validate: viewModel.validation )
+           self.textfield.hasNext(store: &cancelableBag)
         }
         
         if let max = viewModel.maxInput {
@@ -123,5 +124,6 @@ extension TextFieldCellView {
         if let defaultValue = viewModel.defaultValue  {
             self.textfield.text = defaultValue
         }
+    
     }
 }
