@@ -56,6 +56,19 @@ class TextFieldCellViewModel: ViewModelType {
                  },
                  maxInput: 10)
     }
+    
+    class func Mocked2() -> TextFieldCellViewModel {
+         return TextFieldCellViewModel(title: "TITLE",
+                  defaultValue: "defaultValue",
+                  placeHolder: "placeHolder",
+                  underlineMessage: "underline messagge",
+                  fieldType: .datePicker,
+                  validation: { (inputText) -> Bool in
+                    print("inputText: onValidationClosure  \(inputText)")
+                    return true
+                  },
+                  maxInput: 10)
+     }
 }
 
 enum FieldType {

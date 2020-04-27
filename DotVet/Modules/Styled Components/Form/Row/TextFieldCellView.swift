@@ -64,7 +64,6 @@ class TextFieldCellView: UITableViewCell {
     }
 
     private func setView() {
-        self.tfController.start(self.textfield, placeHolder: self.viewModel?.placeHolder)
         self.addSubview(textfield)
     }
 
@@ -98,28 +97,30 @@ extension TextFieldCellView {
       }
     }
     
-    func bind(viewModel: TextFieldCellViewModel?) {
-        switch viewModel?.fieldType {
+    func bind(viewModel: TextFieldCellViewModel) {
+        self.viewModel = viewModel
+        self.tfController.start(self.textfield, placeHolder: viewModel.placeHolder)
+        
+        switch viewModel.fieldType {
         case .datePicker:
            self.textfield.setDatePickerAsTextInput()
         default:
-           guard let validation = viewModel?.validation else { return }
            self.textfield
                .validateInput(controller: tfController,
                             errorMessage: "errorMessage",
                             store: &cancelableBag,
-                            validate: validation)
+                            validate: viewModel.validation )
         }
         
-        if let max = self.viewModel?.maxInput {
+        if let max = viewModel.maxInput {
             self.textfield.maxInput(chars: max, store: &self.cancelableBag)
         }
         
-        if let underline = self.viewModel?.underlineMessage  {
+        if let underline = viewModel.underlineMessage  {
             self.textfield.leadingUnderlineLabel.text = underline
         }
         
-        if let defaultValue = self.viewModel?.defaultValue  {
+        if let defaultValue = viewModel.defaultValue  {
             self.textfield.text = defaultValue
         }
     }

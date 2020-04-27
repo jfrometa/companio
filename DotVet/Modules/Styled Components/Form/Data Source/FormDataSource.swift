@@ -17,9 +17,14 @@ class FormViewDataSource: NSObject, DataSource {
   typealias Values = FormTextFieldSectionModel
   var values = [Values]()
     
-  init(with fields: [Values]){
-     self.values = fields
+  init(with fields: [Values] = []){
+    self.values.append(contentsOf: fields)
   }
+    
+    func update(_ rows: [Values]){
+        self.values.append(contentsOf: rows)
+        
+    }
     
   func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
     self.values[section].items.count
@@ -38,8 +43,14 @@ class FormViewDataSource: NSObject, DataSource {
     let section = indexPath.section
     let index = indexPath.item
 
-    cell.viewModel = values[section].items[index]
+    cell.bind(viewModel: values[section].items[index])
     return cell
   }
+    
+    
+    func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+      guard values.count > 0 else { return UIView(frame: .zero) }
+      return TitleLabelView(message: values[section].header)
+    }
     
 }

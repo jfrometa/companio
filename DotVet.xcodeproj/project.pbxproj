@@ -17,6 +17,9 @@
 		8E57ACE92456531600C2FA6D /* FormDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE82456531600C2FA6D /* FormDataSource.swift */; };
 		8E57ACEB245656B200C2FA6D /* Sequence_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */; };
 		8E57ACED24565BB400C2FA6D /* FormTextFieldSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACEC24565BB400C2FA6D /* FormTextFieldSectionModel.swift */; };
+		8E57ACF02456830200C2FA6D /* TitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACEF2456830200C2FA6D /* TitleLabelView.swift */; };
+		8E57ACF22456867300C2FA6D /* FormTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACF12456867300C2FA6D /* FormTableViewHeaderView.swift */; };
+		8E57ACF4245686C600C2FA6D /* TitleAndMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACF3245686C600C2FA6D /* TitleAndMessage.swift */; };
 		8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F418243FD7D100C6033C /* AppDelegate.swift */; };
 		8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41A243FD7D100C6033C /* SceneDelegate.swift */; };
 		8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41C243FD7D100C6033C /* PetViewController.swift */; };
@@ -85,6 +88,9 @@
 		8E57ACE82456531600C2FA6D /* FormDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataSource.swift; sourceTree = "<group>"; };
 		8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence_ext.swift; sourceTree = "<group>"; };
 		8E57ACEC24565BB400C2FA6D /* FormTextFieldSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldSectionModel.swift; sourceTree = "<group>"; };
+		8E57ACEF2456830200C2FA6D /* TitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelView.swift; sourceTree = "<group>"; };
+		8E57ACF12456867300C2FA6D /* FormTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewHeaderView.swift; sourceTree = "<group>"; };
+		8E57ACF3245686C600C2FA6D /* TitleAndMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndMessage.swift; sourceTree = "<group>"; };
 		8E70A7026382F7921A82BA01 /* Pods-DotVetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotVetUITests.release.xcconfig"; path = "Target Support Files/Pods-DotVetUITests/Pods-DotVetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8E78F415243FD7D100C6033C /* DotVet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotVet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E78F418243FD7D100C6033C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +192,15 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
+		8E57ACEE245682C500C2FA6D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E57ACEF2456830200C2FA6D /* TitleLabelView.swift */,
+				8E57ACF12456867300C2FA6D /* FormTableViewHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8E78F40C243FD7D100C6033C = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +282,7 @@
 				8E78F4532440EC1F00C6033C /* RegistryProtocol.swift */,
 				8E78F4552440ED5300C6033C /* OwnerProtocol.swift */,
 				8E78F4572440ED7700C6033C /* Veterinary.swift */,
+				8E57ACF3245686C600C2FA6D /* TitleAndMessage.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -351,6 +367,7 @@
 		8EF2D1222445611B0056AEF5 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				8E57ACEE245682C500C2FA6D /* Views */,
 				8E57ACE7245652F900C2FA6D /* Data Source */,
 				8E57ACE624564D9C00C2FA6D /* Row */,
 				8E57ACE2245649B000C2FA6D /* FormView.swift */,
@@ -614,6 +631,7 @@
 				8E57ACE524564CC300C2FA6D /* Reusable.swift in Sources */,
 				8EF2D1262445615F0056AEF5 /* FormViewBuilder.swift in Sources */,
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
+				8E57ACF22456867300C2FA6D /* FormTableViewHeaderView.swift in Sources */,
 				8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */,
 				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
 				8EF2D0DC2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift in Sources */,
@@ -621,6 +639,7 @@
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E57ACEB245656B200C2FA6D /* Sequence_ext.swift in Sources */,
 				8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */,
+				8E57ACF02456830200C2FA6D /* TitleLabelView.swift in Sources */,
 				8E2CBB0D244CEFEF00E4832F /* TextFieldCellViewModel.swift in Sources */,
 				8E2CBB0B244CEC7A00E4832F /* MDCTextField_Combine_ext.swift in Sources */,
 				8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */,
@@ -631,6 +650,7 @@
 				8E78F4732443747B00C6033C /* AddPetViewController.swift in Sources */,
 				8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */,
 				8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */,
+				8E57ACF4245686C600C2FA6D /* TitleAndMessage.swift in Sources */,
 				8EF2D12C244576100056AEF5 /* UITextField_Layer_ext.swift in Sources */,
 				8EF2D124244561490056AEF5 /* TextFieldCellView.swift in Sources */,
 				8EF2D0DA2443CA4F0056AEF5 /* Double_STRDate_ext.swift in Sources */,

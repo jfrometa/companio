@@ -10,9 +10,9 @@ import MaterialComponents
 import UIKit
 
 class FormView: UIView {
-  let tableView = UITableView(frame: .zero, style: .grouped)
+  let tableView = UITableView(frame: .zero, style: .grouped).withAutoLayout()
   let btnContinue: MDCButton = {
-    let button = MDCButton()
+    let button = MDCButton().withAutoLayout()
     button.setTitle("Continue", for: .normal)
     return button
   }()
@@ -39,22 +39,21 @@ class FormView: UIView {
 
     self.addSubview(self.tableView)
     self.addSubview(self.btnContinue)
-    
-    self.tableView.backgroundColor = .red
-    self.btnContinue.backgroundColor = .blue
   }
     
     private func setConstraints() {
-        self.tableView.constrain(top: topAnchor,
-                              leading: leadingAnchor,
-                              trailing: trailingAnchor,
+        self.tableView.constrain(top: self.topAnchor,
+                              leading: self.leadingAnchor,
+                              trailing: self.trailingAnchor,
                               padding: .init(top: 0, left: 20, bottom: 20, right: 20))
 
         self.btnContinue.constrain(top: tableView.bottomAnchor,
                               leading: leadingAnchor,
                               bottom: bottomAnchor,
                               trailing: trailingAnchor,
-                              padding: .init(top: 0, left: 20, bottom: 10, right: 20))
+                              padding: .init(top: 0, left: 20, bottom: 10, right: 20),
+                              size: .init(width: 0, height: 48))
+        
       }
 }
 

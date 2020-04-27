@@ -9,14 +9,20 @@ import Combine
 import UIKit
 
 class AddPetViewController: UIViewController {
-    private var mainView: FormView!
+    private var mainView: FormView
     private let viewModel: AddPetViewModel
     private var cancellableBag = Set<AnyCancellable>()
-    private var dataSource: FormViewDataSource?
+    private var dataSource: FormViewDataSource
     
     init(viewModel: AddPetViewModel) {
         self.viewModel = viewModel
         self.mainView = FormView(frame: .zero)
+        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER",
+                                                items: [TextFieldCellViewModel.Mocked(),
+                                                        TextFieldCellViewModel.Mocked(),
+                                                        TextFieldCellViewModel.Mocked(),
+                                                        TextFieldCellViewModel.Mocked()])
+        self.dataSource = FormViewDataSource()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,13 +31,32 @@ class AddPetViewController: UIViewController {
     }
 
     override func loadView() {
-        view = mainView
+        super.loadView()
+        self.view = self.mainView
+      
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel()
+        
+        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER !",
+                                            items: [TextFieldCellViewModel.Mocked(),
+                                                    TextFieldCellViewModel.Mocked(),
+                                                    TextFieldCellViewModel.Mocked(),
+                                                    TextFieldCellViewModel.Mocked2()])
+        
+        let mocked2 = FormTextFieldSectionModel(header: "TITLE/HEADER  !!",
+        items: [TextFieldCellViewModel.Mocked2(),
+                TextFieldCellViewModel.Mocked(),
+                TextFieldCellViewModel.Mocked(),
+                TextFieldCellViewModel.Mocked()])
+        
+        self.dataSource.update([mocked] + [mocked2])
+        self.mainView.tableView.dataSource = self.dataSource
+        self.mainView.tableView.delegate = self.dataSource
     }
+    
 
     private func bindViewModel() {
         let btnControl = mainView.btnContinue.publisher(for: [.touchUpInside])
@@ -45,19 +70,6 @@ class AddPetViewController: UIViewController {
             .map { _ in true }
             .assign(to: \.isSelected, on: mainView.btnContinue)
             .store(in: &cancellableBag)
-        
-       
-        
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.mainView.tableView.dataSource = self.dataSource
-        self.mainView.tableView.delegate = self.dataSource
-        
-        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER", items: [TextFieldCellViewModel.Mocked()])
-        self.dataSource = FormViewDataSource(with: [mocked])
-        
-        self.mainView.tableView.reloadData()
-    }
 }
