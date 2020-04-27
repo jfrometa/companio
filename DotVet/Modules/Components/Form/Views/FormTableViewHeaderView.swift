@@ -11,12 +11,11 @@ import UIKit
 class FormTableViewHeaderView: UIView {
     private let title = UILabel().withAutoLayout()
     private let subtitle = UILabel().withAutoLayout()
-
-    init(frame: CGRect = .init(x: 0, y: 0,
-                               width: UIScreen.main.bounds.width,
-                               height: 90), data: TitleAndMessage) {
+    private let container = UIView().withAutoLayout()
+    
+    init(frame: CGRect = .zero, data: TitleAndMessage) {
         super.init(frame: frame)
-        setView(data: data)
+        self.setView(data: data)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,47 +23,38 @@ class FormTableViewHeaderView: UIView {
     }
 
     private func setView(data: TitleAndMessage) {
-        title.numberOfLines = 0
-        title.lineBreakMode = .byWordWrapping
-        title.attributedText = data.title.formatTextWithFont()
-        title.textAlignment = .center
+        self.title.numberOfLines = 0
+        self.title.lineBreakMode = .byWordWrapping
+        self.title.attributedText = data.title.formatTextWithFont(color: .yellow)
+        self.title.textAlignment = .center
 
-        subtitle.numberOfLines = 0
-        subtitle.lineBreakMode = .byWordWrapping
-        subtitle.attributedText = data.message.formatTextWithFont()
-        subtitle.textAlignment = .center
+        self.subtitle.numberOfLines = 0
+        self.subtitle.lineBreakMode = .byWordWrapping
+        self.subtitle.attributedText = data.message.formatTextWithFont(color: .green)
+        self.subtitle.textAlignment = .center
 
-        addSubview(title)
-        addSubview(subtitle)
-        backgroundColor = .clear
+        self.container.addSubview(self.title)
+        self.container.addSubview(self.subtitle)
+        self.addSubview(self.container)
+        self.backgroundColor = .clear
+        
+        self.title
+            .constrain(top: topAnchor,
+                      leading:leadingAnchor,
+                      trailing: trailingAnchor,
+                      padding: .init(top: 8, left: 38, bottom: 0, right: 38))
 
-        title
-            .constrain(top: safeTopAnchor,
-                       leading: safeLeadingAnchor,
-                       trailing: safeTrailingAnchor,
-                       padding: .init(top: 8, left: 38, bottom: 0, right: 38))
+        self.subtitle
+            .constrain(top: self.title.bottomAnchor,
+                      leading: leadingAnchor,
+                      bottom: bottomAnchor,
+                      trailing:trailingAnchor,
+                      padding: .init(top: 8, left: 38, bottom: 10, right: 38))
 
-        subtitle
-            .constrain(top: title.safeTopAnchor,
-                       leading: safeLeadingAnchor,
-                       bottom: safeBottomAnchor,
-                       trailing: safeTrailingAnchor,
-                       padding: .init(top: 8, left: 38, bottom: 20, right: 38))
-
-//    constrain(self.title, self.subtitle) { title, subtitle in
-//       guard let sv = title.superview else { return }
-//       sv.height >= frame.height
-//       sv.width == frame.width
-//
-//       title.top == sv.top + 8
-//       title.leading == sv.leading + 38
-//       title.trailing == sv.trailing - 37
-//
-//       subtitle.top == title.bottom + 8
-//       subtitle.leading == sv.leading + 38
-//       subtitle.trailing == sv.trailing - 37
-//       subtitle.bottom == sv.bottom - 20
-//      }
-//    }
+        self.container
+            .constrain(top: topAnchor,
+                      leading: leadingAnchor,
+                      bottom: bottomAnchor,
+                      trailing: trailingAnchor)
     }
 }

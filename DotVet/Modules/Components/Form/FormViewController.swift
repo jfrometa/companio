@@ -1,23 +1,23 @@
-//
-import Combine
+
 //  AddPetViewController.swift
 //  DotVet
 //
 //  Created by Jose Frometa on 4/12/20.
 //  Copyright © 2020 Upgrade. All rights reserved.
 //
+import Combine
 import UIKit
 
 class FormViewController: UIViewController {
     private var mainView: FormView
     private let viewModel: FormAddPetViewModel
-    private var cancellableBag = Set<AnyCancellable>()
     private var dataSource: FormViewDataSource
-
+    private var cancellableBag = Set<AnyCancellable>()
+    
     init(viewModel: FormAddPetViewModel) {
         self.viewModel = viewModel
-        mainView = FormView(frame: .zero)
-        dataSource = FormViewDataSource()
+        self.mainView = FormView(frame: .zero)
+        self.dataSource = FormViewDataSource()
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,23 +28,26 @@ class FormViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        view = mainView
+        self.view = self.mainView
+        mainView.tableView.dataSource = dataSource
+        mainView.tableView.delegate = dataSource
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+        self.bindViewModel()
+        
+        let mocked = FormTextFieldSectionModel(header: "TITLE / HEADER 1!",
+                                           items: [TextFieldCellViewModel.Mocked(),
+                                           TextFieldCellViewModel.Mocked2()])
+        
+        let mocked2 = FormTextFieldSectionModel(header: "TITLE/HEADER 2 !!",
+                                            items: [TextFieldCellViewModel.Mocked(),
+                                            TextFieldCellViewModel.Mocked(),
+                                            TextFieldCellViewModel.Mocked(),
+                                            TextFieldCellViewModel.Mocked2()])
 
-        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER !",
-                                               items: [TextFieldCellViewModel.Mocked(),
-                                                       TextFieldCellViewModel.Mocked(),
-                                                       TextFieldCellViewModel.Mocked(),
-                                                       TextFieldCellViewModel.Mocked2()])
-
-        dataSource.update([mocked])
-        mainView.tableView.dataSource = dataSource
-        mainView.tableView.delegate = dataSource
-        mainView.tableView.reloadData()
+        dataSource.update([mocked] + [mocked2])
     }
 
     private func bindViewModel() {

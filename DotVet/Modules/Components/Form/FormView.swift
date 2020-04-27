@@ -11,6 +11,11 @@ import UIKit
 
 class FormView: UIView {
     let tableView = UITableView(frame: .zero, style: .grouped).withAutoLayout()
+    let tableViewHeader: FormTableViewHeaderView  = {
+       let  data = TitleAndMessage(title: "Header TitleHeader TitleHeader Title", message: "Message")
+       let header = FormTableViewHeaderView(data: data).withAutoLayout()
+       return header
+    }()
     let btnContinue: MDCButton = {
         let button = MDCButton().withAutoLayout()
         button.setTitle("Continue", for: .normal)
@@ -19,8 +24,8 @@ class FormView: UIView {
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-        setView()
-        setConstraints()
+        self.setView()
+        self.setConstraints()
     }
 
     required init?(coder _: NSCoder) {
@@ -28,33 +33,37 @@ class FormView: UIView {
     }
 
     private func setView() {
-        backgroundColor = .white
-        let data = TitleAndMessage(title: "Header Title", message: "Message")
-        let tableViewHeader = FormTableViewHeaderView(data: data)
-
-        tableView.tableHeaderView = tableViewHeader
-        tableView.backgroundColor = .white
-        tableView.separatorStyle = .none
-        tableView.register(TextFieldCellView.self,
+        self.backgroundColor = .white
+        
+        self.tableView.separatorStyle = .none
+        self.tableView.register(TextFieldCellView.self,
                            forCellReuseIdentifier: TextFieldCellView.reuseID)
-        tableView.allowsSelection = false
-        tableView.bounces = true
+        self.tableView.allowsSelection = false
+        self.tableView.bounces = true
 
-        addSubview(tableView)
-        addSubview(btnContinue)
+        self.addSubview(tableView)
+        self.addSubview(btnContinue)
+        self.addSubview(tableViewHeader)
     }
 
     private func setConstraints() {
-        tableView.constrain(top: topAnchor,
-                            leading: leadingAnchor,
-                            trailing: trailingAnchor,
-                            padding: .init(top: 0, left: 0, bottom: 0, right: 0))
-
-        btnContinue.constrain(top: tableView.bottomAnchor,
-                              leading: leadingAnchor,
-                              bottom: bottomAnchor,
-                              trailing: trailingAnchor,
-                              padding: .init(top: 0, left: 20, bottom: 10, right: 20),
-                              size: .init(width: 0, height: 48))
+        self.tableViewHeader
+            .constrain(top: safeTopAnchor,
+                     leading: leadingAnchor,
+                     trailing: trailingAnchor)
+        
+        self.tableView
+            .constrain(top: tableViewHeader.safeAreaLayoutGuide.bottomAnchor,
+                    leading: leadingAnchor,
+                    trailing: trailingAnchor,
+                    padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+   
+        self.btnContinue
+            .constrain(top: tableView.bottomAnchor,
+                      leading: leadingAnchor,
+                      bottom: safeBottomAnchor,
+                      trailing: trailingAnchor,
+                      padding: .init(top: 0, left: 20, bottom: 5, right: 20),
+                      size: .init(width: 0, height: 48))
     }
 }

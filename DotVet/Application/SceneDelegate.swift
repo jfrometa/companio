@@ -24,6 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
 
+        // ignores the user theme settings and enforces .lightMode
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
+        
         let navigationController = UINavigationController()
         let navigator = DefaultNavigatonComposer
             .build(navigationController: navigationController)

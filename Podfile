@@ -26,7 +26,7 @@ post_install do |installer|
     puts target.name
     target.build_configurations.each do |config|
       if config.name == 'Debug'
-        config.build_settings['ENABLE_BITCODE'] = 'NO'
+        config.build_settings['ENABLE_BITCODE'] = 'YES'
         config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
         config.build_settings['OTHER_SWIFT_FLAGS'] = ['$(inherited)', '-Onone']
         config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'

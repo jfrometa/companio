@@ -9,10 +9,7 @@
 import Combine
 import Foundation
 
-struct TextFieldCellViewModel: ViewModelType {
-    struct Input {}
-    struct Output {}
-
+struct TextFieldCellViewModel {
     let title: String
     let underlineMessage: String?
     let placeHolder: String?
@@ -37,11 +34,7 @@ struct TextFieldCellViewModel: ViewModelType {
         self.defaultValue = defaultValue
         self.underlineMessage = underlineMessage
     }
-
-    func transform(input _: Input) -> Output {
-        Output()
-    }
-
+    
     static func Mocked() -> TextFieldCellViewModel {
         return TextFieldCellViewModel(title: "TITLE",
                                       defaultValue: "defaultValue",
@@ -54,7 +47,6 @@ struct TextFieldCellViewModel: ViewModelType {
                                       },
                                       maxInput: 10)
     }
-
     static func Mocked2() -> TextFieldCellViewModel {
         return TextFieldCellViewModel(title: "TITLE",
                                       defaultValue: "defaultValue",
@@ -65,7 +57,7 @@ struct TextFieldCellViewModel: ViewModelType {
                                           print("inputText: onValidationClosure  \(inputText)")
                                           return true
                                       },
-                                      maxInput: 10)
+                                      maxInput: 20)
     }
 }
 

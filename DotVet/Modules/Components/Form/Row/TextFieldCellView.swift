@@ -12,31 +12,8 @@ import MaterialComponents
 import UIKit
 import UserNotifications
 
-protocol TextFieldHandler: UITextFieldDelegate {
-    var hidesPlaceholderOnInput: Bool { get set }
-    var returnKeyType: UIReturnKeyType { get set }
-    var isValidInput: () -> Bool { get }
-    var viewModel: TextFieldCellViewModel? { get }
-}
-
-extension TextFieldCellView: TextFieldHandler {
-    var isValidInput: () -> Bool {
-        { true }
-    }
-
-    var hidesPlaceholderOnInput: Bool {
-        get { textfield.hidesPlaceholderOnInput }
-        set { textfield.hidesPlaceholderOnInput = newValue }
-    }
-
-    var returnKeyType: UIReturnKeyType {
-        get { textfield.returnKeyType }
-        set { textfield.returnKeyType = newValue }
-    }
-}
-
 class TextFieldCellView: UITableViewCell {
-    var viewModel: TextFieldCellViewModel?
+    var viewModel: TextFieldCellViewModel? = nil
     private var cancelableBag = Set<AnyCancellable>()
 
     var tfController: MDCTextInputControllerUnderline
@@ -51,12 +28,12 @@ class TextFieldCellView: UITableViewCell {
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        tfController = MDCTextInputControllerUnderline(textInput: textfield)
+        self.tfController = MDCTextInputControllerUnderline(textInput: textfield)
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setView()
-        setContraints()
-        subscribeEvents()
+        self.setView()
+        self.setContraints()
+        self.subscribeEvents()
     }
 
     required init?(coder _: NSCoder) {
@@ -64,20 +41,20 @@ class TextFieldCellView: UITableViewCell {
     }
 
     private func setView() {
-        addSubview(textfield)
+        self.addSubview(textfield)
     }
 
     private func setContraints() {
-        textfield
+        self.textfield
             .constrain(top: safeTopAnchor,
-                       leading: safeLeadingAnchor,
-                       bottom: safeBottomAnchor,
-                       trailing: safeTrailingAnchor,
-                       padding: .init(top: 0, left: 20, bottom: 0, right: 20))
+                   leading: safeLeadingAnchor,
+                   bottom: safeBottomAnchor,
+                   trailing: safeTrailingAnchor,
+                   padding: .init(top: 0, left: 20, bottom: 0, right: 20))
     }
 
     private func subscribeEvents() {
-        textfield
+        self.textfield
             .publisher(for: [.editingDidEnd, .editingDidEndOnExit])
             .combineLatest(textfield.textDidChangeNotification)
             .sink(receiveValue: { _, text in
@@ -98,31 +75,33 @@ extension TextFieldCellView {
     }
 
     func bind(viewModel: TextFieldCellViewModel) {
+        guard self.viewModel == nil else { return }
         self.viewModel = viewModel
-        tfController.start(textfield, placeHolder: viewModel.placeHolder)
-
+        self.tfController.start(textfield, placeHolder: viewModel.placeHolder)
+        
         switch viewModel.fieldType {
         case .datePicker:
-            textfield.setDatePickerAsTextInput()
+            self.textfield.setDatePickerAsTextInput()
         default:
-            textfield
+            self.textfield
                 .validateInput(controller: tfController,
                                errorMessage: "errorMessage",
                                store: &cancelableBag,
                                validate: viewModel.validation)
-            textfield.hasNext(store: &cancelableBag)
         }
+        
+        self.textfield.hasNext(store: &cancelableBag)
 
         if let max = viewModel.maxInput {
-            textfield.maxInput(chars: max, store: &cancelableBag)
+            self.textfield.maxInput(chars: max, store: &cancelableBag)
         }
 
         if let underline = viewModel.underlineMessage {
-            textfield.leadingUnderlineLabel.text = underline
+            self.textfield.leadingUnderlineLabel.text = underline
         }
 
         if let defaultValue = viewModel.defaultValue {
-            textfield.text = defaultValue
+            self.textfield.text = defaultValue
         }
     }
 }

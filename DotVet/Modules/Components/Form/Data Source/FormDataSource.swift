@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+ protocol DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     associatedtype Values: TableViewSectionModelType
     var values: [Values] { get }
-}
+ }
 
-class FormViewDataSource: NSObject, DataSource {
+ class FormViewDataSource: NSObject, DataSource {
     typealias Values = FormTextFieldSectionModel
     var values = [Values]()
 
@@ -22,17 +22,19 @@ class FormViewDataSource: NSObject, DataSource {
     }
 
     func update(_ rows: [Values]) {
-        values.append(contentsOf: rows)
+        self.values = rows
     }
 
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         values[section].items.count
     }
 
-    func numberOfSections(in _: UITableView) -> Int { values.count }
+    func numberOfSections(in _: UITableView) -> Int {
+        values.count
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard values.count > 0, let cell = tableView.dequeueReusableCell(
+        guard  let cell = tableView.dequeueReusableCell(
             withIdentifier: TextFieldCellView.reuseID, for: indexPath
         ) as? TextFieldCellView
         else {
@@ -47,7 +49,6 @@ class FormViewDataSource: NSObject, DataSource {
     }
 
     func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard values.count > 0 else { return UIView(frame: .zero) }
         return TitleLabelView(message: values[section].header)
     }
-}
+ }
