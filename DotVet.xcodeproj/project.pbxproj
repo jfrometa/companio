@@ -258,7 +258,7 @@
 		8E78F44A2440CDCC00C6033C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8EF2D1272445653B0056AEF5 /* Styled Components */,
+				8EF2D1272445653B0056AEF5 /* Components */,
 				8EF2D11F2445566F0056AEF5 /* Navigators */,
 				8E78F44E2440DE3200C6033C /* Pet */,
 			);
@@ -376,12 +376,12 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		8EF2D1272445653B0056AEF5 /* Styled Components */ = {
+		8EF2D1272445653B0056AEF5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				8EF2D1222445611B0056AEF5 /* Form */,
 			);
-			path = "Styled Components";
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DCFC5FC8D1D362B9301D932B /* Pods */ = {
