@@ -9,12 +9,14 @@ import Combine
 import UIKit
 
 class AddPetViewController: UIViewController {
-    private var mainView: AddPetView!
+    private var mainView: FormView!
     private let viewModel: AddPetViewModel
     private var cancellableBag = Set<AnyCancellable>()
-
+    private var dataSource: FormViewDataSource?
+    
     init(viewModel: AddPetViewModel) {
         self.viewModel = viewModel
+        self.mainView = FormView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,13 +25,12 @@ class AddPetViewController: UIViewController {
     }
 
     override func loadView() {
-        mainView = AddPetView(frame: .zero)
         view = mainView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+        self.bindViewModel()
     }
 
     private func bindViewModel() {
@@ -44,5 +45,19 @@ class AddPetViewController: UIViewController {
             .map { _ in true }
             .assign(to: \.isSelected, on: mainView.btnContinue)
             .store(in: &cancellableBag)
+        
+       
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.mainView.tableView.dataSource = self.dataSource
+        self.mainView.tableView.delegate = self.dataSource
+        
+        let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER", items: [TextFieldCellViewModel.Mocked()])
+        self.dataSource = FormViewDataSource(with: [mocked])
+        
+        self.mainView.tableView.reloadData()
     }
 }

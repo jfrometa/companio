@@ -8,6 +8,7 @@
 
 import Combine
 import MaterialComponents
+import IQKeyboardManagerSwift
 
 extension MDCTextField {
     var textDidChangeNotification: AnyPublisher<String, Never> {
@@ -18,7 +19,7 @@ extension MDCTextField {
             .compactMap { $0?.text }
             .eraseToAnyPublisher()
     }
-
+    
     func maxInput(chars: Int, store: inout Set<AnyCancellable>) {
         textDidChangeNotification
             .map { ($0.count > chars) ? String($0.prefix(chars)) : $0 }
@@ -28,15 +29,23 @@ extension MDCTextField {
     }
 
     func validateInput(controller: MDCTextInputControllerBase,
-                       errorMessage: String,
-                       store: inout Set<AnyCancellable>,
-                       scan: @escaping (String) -> Bool) {
+                     errorMessage: String,
+                     store: inout Set<AnyCancellable>,
+                     validate: @escaping (String) -> Bool) {
         textDidChangeNotification
-            .map { scan($0) }
+            .map { validate($0) }
             .sink(receiveValue: { isValid in
                 if !isValid { controller.setErrorText(errorMessage, errorAccessibilityValue: nil) }
             })
             .store(in: &store)
+    }
+    
+    func hasNext(store: inout Set<AnyCancellable>) {
+        publisher(for: [.editingDidEndOnExit])
+        .sink(receiveValue:  { _ in
+          IQKeyboardManager.shared.goNext()
+         })
+        .store(in: &store)
     }
 
     func standar(_ color: UIColor = .black) {

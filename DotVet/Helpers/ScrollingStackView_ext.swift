@@ -8,6 +8,7 @@
 
 import Combine
 import UIKit
+import MaterialComponents
 
 protocol AdjustableForKeyboard: class {
     func subscribeToKeyboard(store: inout Set<AnyCancellable>)
@@ -17,31 +18,21 @@ protocol FieldConnectable: AdjustableForKeyboard {
     func connectTextFields()
 }
 
-extension ScrollingStackView: FieldConnectable {
-    func subscribeToKeyboard(store: inout Set<AnyCancellable>) {
-        let keyboardWillOpen = NotificationCenter
-            .default
-            .publisher(for: UIResponder.keyboardWillChangeFrameNotification)
-            .compactMap { $0.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? CGRect }
-            //  .map {$0.height}
-            .map { [unowned self] in self.convert($0, from: self.window) }
-            .map { [unowned self] in $0.height - self.safeAreaInsets.bottom }
-            .print()
-
-        let keyboardWillHide = NotificationCenter
-            .default
-            .publisher(for: UIResponder.keyboardWillHideNotification)
-            .map { _ in CGFloat(0) }
-
-        return Publishers
-            .Merge(keyboardWillOpen, keyboardWillHide)
-            .subscribe(on: RunLoop.main)
-            .assign(to: \UIScrollView.contentInset.bottom, on: self)
-            .store(in: &store)
-    }
-
-    func connectTextFields() {
-        let textFields = arrangedSubviews.compactMap { $0 as? UITextField }
-        UITextField.connectNextKeyboardReturnKey(for: textFields)
+extension TextFieldCellView {
+    class func connectNextKeyboardReturnKey(for fields: [TextFieldCellView]) {
+        guard let last = fields.last else {
+            return
+        }
+        for i in 0 ..< fields.count - 1 {
+            fields[i].returnKeyType = .next
+            fields[i].textfield
+                .addTarget(fields[i + 1],
+                           action: #selector(UIResponder.becomeFirstResponder),
+                           for: .editingDidEndOnExit)
+        }
+        last.returnKeyType = .done
+        last.textfield.addTarget(last,
+                               action: #selector(UIResponder.resignFirstResponder),
+                               for: .editingDidEndOnExit)
     }
 }
