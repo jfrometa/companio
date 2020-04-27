@@ -6,8 +6,8 @@
 //  Copyright © 2020 Upgrade. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 struct TextFieldCellViewModel: ViewModelType {
     struct Input {}
@@ -29,51 +29,48 @@ struct TextFieldCellViewModel: ViewModelType {
          fieldType: FieldType = .regular,
          validation: @escaping ((String) -> Bool) = { _ in false },
          maxInput: Int? = nil) {
-      
-      self.title = title
-      self.placeHolder = placeHolder
-      self.maxInput = maxInput
-      self.validation = validation
-      self.fieldType = fieldType
-      self.defaultValue = defaultValue
-      self.underlineMessage = underlineMessage
+        self.title = title
+        self.placeHolder = placeHolder
+        self.maxInput = maxInput
+        self.validation = validation
+        self.fieldType = fieldType
+        self.defaultValue = defaultValue
+        self.underlineMessage = underlineMessage
     }
-    
-    
+
     func transform(input _: Input) -> Output {
         Output()
     }
-    
+
     static func Mocked() -> TextFieldCellViewModel {
         return TextFieldCellViewModel(title: "TITLE",
-                 defaultValue: "defaultValue",
-                 placeHolder: "placeHolder",
-                 underlineMessage: "underline messagge",
-                 fieldType: .regular,
-                 validation: { (inputText) -> Bool in
-                   print("inputText: onValidationClosure  \(inputText)")
-                   return true
-                 },
-                 maxInput: 10)
+                                      defaultValue: "defaultValue",
+                                      placeHolder: "placeHolder",
+                                      underlineMessage: "underline messagge",
+                                      fieldType: .regular,
+                                      validation: { (inputText) -> Bool in
+                                          print("inputText: onValidationClosure  \(inputText)")
+                                          return true
+                                      },
+                                      maxInput: 10)
     }
-    
+
     static func Mocked2() -> TextFieldCellViewModel {
-         return TextFieldCellViewModel(title: "TITLE",
-                  defaultValue: "defaultValue",
-                  placeHolder: "placeHolder",
-                  underlineMessage: "underline messagge",
-                  fieldType: .datePicker,
-                  validation: { (inputText) -> Bool in
-                    print("inputText: onValidationClosure  \(inputText)")
-                    return true
-                  },
-                  maxInput: 10)
-     }
+        return TextFieldCellViewModel(title: "TITLE",
+                                      defaultValue: "defaultValue",
+                                      placeHolder: "placeHolder",
+                                      underlineMessage: "underline messagge",
+                                      fieldType: .datePicker,
+                                      validation: { (inputText) -> Bool in
+                                          print("inputText: onValidationClosure  \(inputText)")
+                                          return true
+                                      },
+                                      maxInput: 10)
+    }
 }
 
 enum FieldType {
-  case regular
-  case datePicker
-  case modal
+    case regular
+    case datePicker
+    case modal
 }
-

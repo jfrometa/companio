@@ -13,12 +13,12 @@ class FormViewController: UIViewController {
     private let viewModel: FormAddPetViewModel
     private var cancellableBag = Set<AnyCancellable>()
     private var dataSource: FormViewDataSource
-    
+
     init(viewModel: FormAddPetViewModel) {
         self.viewModel = viewModel
-        self.mainView = FormView(frame: .zero)
-        self.dataSource = FormViewDataSource()
-        
+        mainView = FormView(frame: .zero)
+        dataSource = FormViewDataSource()
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -28,25 +28,24 @@ class FormViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.view = self.mainView
+        view = mainView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindViewModel()
-        
+        bindViewModel()
+
         let mocked = FormTextFieldSectionModel(header: "TITLE/HEADER !",
-                                            items: [TextFieldCellViewModel.Mocked(),
-                                                    TextFieldCellViewModel.Mocked(),
-                                                    TextFieldCellViewModel.Mocked(),
-                                                    TextFieldCellViewModel.Mocked2()])
-        
-        self.dataSource.update([mocked])
-        self.mainView.tableView.dataSource = self.dataSource
-        self.mainView.tableView.delegate = self.dataSource
-        self.mainView.tableView.reloadData()
+                                               items: [TextFieldCellViewModel.Mocked(),
+                                                       TextFieldCellViewModel.Mocked(),
+                                                       TextFieldCellViewModel.Mocked(),
+                                                       TextFieldCellViewModel.Mocked2()])
+
+        dataSource.update([mocked])
+        mainView.tableView.dataSource = dataSource
+        mainView.tableView.delegate = dataSource
+        mainView.tableView.reloadData()
     }
-    
 
     private func bindViewModel() {
         let btnControl = mainView.btnContinue.publisher(for: [.touchUpInside])
@@ -61,5 +60,4 @@ class FormViewController: UIViewController {
             .assign(to: \.isSelected, on: mainView.btnContinue)
             .store(in: &cancellableBag)
     }
-    
 }

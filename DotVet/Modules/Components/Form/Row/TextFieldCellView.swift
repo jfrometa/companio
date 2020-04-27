@@ -7,11 +7,10 @@
 //
 
 import Combine
+import IQKeyboardManagerSwift
 import MaterialComponents
 import UIKit
 import UserNotifications
-import IQKeyboardManagerSwift
-
 
 protocol TextFieldHandler: UITextFieldDelegate {
     var hidesPlaceholderOnInput: Bool { get set }
@@ -19,6 +18,7 @@ protocol TextFieldHandler: UITextFieldDelegate {
     var isValidInput: () -> Bool { get }
     var viewModel: TextFieldCellViewModel? { get }
 }
+
 extension TextFieldCellView: TextFieldHandler {
     var isValidInput: () -> Bool {
         { true }
@@ -38,7 +38,7 @@ extension TextFieldCellView: TextFieldHandler {
 class TextFieldCellView: UITableViewCell {
     var viewModel: TextFieldCellViewModel?
     private var cancelableBag = Set<AnyCancellable>()
-    
+
     var tfController: MDCTextInputControllerUnderline
     let textfield: MDCTextField = {
         let tf = MDCTextField().withAutoLayout()
@@ -49,14 +49,14 @@ class TextFieldCellView: UITableViewCell {
         tf.clearsOnInsertion = false
         return tf
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-       self.tfController = MDCTextInputControllerUnderline(textInput: textfield)
-       super.init(style: style, reuseIdentifier: reuseIdentifier)
-      
-       self.setView()
-       self.setContraints()
-       self.subscribeEvents()
+        tfController = MDCTextInputControllerUnderline(textInput: textfield)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setView()
+        setContraints()
+        subscribeEvents()
     }
 
     required init?(coder _: NSCoder) {
@@ -64,66 +64,65 @@ class TextFieldCellView: UITableViewCell {
     }
 
     private func setView() {
-        self.addSubview(textfield)
+        addSubview(textfield)
     }
 
     private func setContraints() {
-        self.textfield
+        textfield
             .constrain(top: safeTopAnchor,
-                leading: safeLeadingAnchor,
-                bottom: safeBottomAnchor,
-                trailing: safeTrailingAnchor,
-                padding: .init(top: 0, left: 20, bottom: 0, right: 20))
+                       leading: safeLeadingAnchor,
+                       bottom: safeBottomAnchor,
+                       trailing: safeTrailingAnchor,
+                       padding: .init(top: 0, left: 20, bottom: 0, right: 20))
     }
 
     private func subscribeEvents() {
-      textfield
-        .publisher(for: [.editingDidEnd, .editingDidEndOnExit])
-        .combineLatest(textfield.textDidChangeNotification)
-        .sink(receiveValue: { (_ , text) in
-            print("text: \(text)")
-        })
-        .store(in: &cancelableBag)
+        textfield
+            .publisher(for: [.editingDidEnd, .editingDidEndOnExit])
+            .combineLatest(textfield.textDidChangeNotification)
+            .sink(receiveValue: { _, text in
+                print("text: \(text)")
+            })
+            .store(in: &cancelableBag)
     }
 }
 
 extension TextFieldCellView {
     private func dismissKeyboard() {
-      DispatchQueue.main.async {
-        guard IQKeyboardManager.shared.keyboardShowing else { return }
-        IQKeyboardManager.shared.goPrevious()
-        IQKeyboardManager.shared.resignFirstResponder()
-        IQKeyboardManager.shared.goNext()
-      }
+        DispatchQueue.main.async {
+            guard IQKeyboardManager.shared.keyboardShowing else { return }
+            IQKeyboardManager.shared.goPrevious()
+            IQKeyboardManager.shared.resignFirstResponder()
+            IQKeyboardManager.shared.goNext()
+        }
     }
-    
+
     func bind(viewModel: TextFieldCellViewModel) {
         self.viewModel = viewModel
-        self.tfController.start(self.textfield, placeHolder: viewModel.placeHolder)
-        
+        tfController.start(textfield, placeHolder: viewModel.placeHolder)
+
         switch viewModel.fieldType {
         case .datePicker:
-           self.textfield.setDatePickerAsTextInput()
+            textfield.setDatePickerAsTextInput()
         default:
-           self.textfield
-               .validateInput(controller: tfController,
-                            errorMessage: "errorMessage",
-                            store: &cancelableBag,
-                            validate: viewModel.validation )
-           self.textfield.hasNext(store: &cancelableBag)
+            textfield
+                .validateInput(controller: tfController,
+                               errorMessage: "errorMessage",
+                               store: &cancelableBag,
+                               validate: viewModel.validation)
+            textfield.hasNext(store: &cancelableBag)
         }
-        
+
         if let max = viewModel.maxInput {
-            self.textfield.maxInput(chars: max, store: &self.cancelableBag)
+            textfield.maxInput(chars: max, store: &cancelableBag)
         }
-        
-        if let underline = viewModel.underlineMessage  {
-            self.textfield.leadingUnderlineLabel.text = underline
+
+        if let underline = viewModel.underlineMessage {
+            textfield.leadingUnderlineLabel.text = underline
         }
-        
-        if let defaultValue = viewModel.defaultValue  {
-            self.textfield.text = defaultValue
+
+        if let defaultValue = viewModel.defaultValue {
+            textfield.text = defaultValue
         }
-    
     }
 }

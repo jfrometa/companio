@@ -9,6 +9,6 @@
 import Foundation
 
 struct TitleAndMessage {
-  let title: String
-  let message: String
+    let title: String
+    let message: String
 }

@@ -10,53 +10,51 @@ import MaterialComponents
 import UIKit
 
 class FormView: UIView {
-  let tableView = UITableView(frame: .zero, style: .grouped).withAutoLayout()
-  let btnContinue: MDCButton = {
-    let button = MDCButton().withAutoLayout()
-    button.setTitle("Continue", for: .normal)
-    return button
-  }()
+    let tableView = UITableView(frame: .zero, style: .grouped).withAutoLayout()
+    let btnContinue: MDCButton = {
+        let button = MDCButton().withAutoLayout()
+        button.setTitle("Continue", for: .normal)
+        return button
+    }()
 
-  override init(frame: CGRect = .zero) {
-    super.init(frame: frame)
-    self.setView()
-    self.setConstraints()
-  }
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        setView()
+        setConstraints()
+    }
 
-  required init?(coder _: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-  private func setView() {
-    self.backgroundColor = .white
-    let data = TitleAndMessage(title: "Header Title", message: "Message")
-    let tableViewHeader = FormTableViewHeaderView(data: data)
-    
-    self.tableView.tableHeaderView = tableViewHeader
-    self.tableView.backgroundColor = .white
-    self.tableView.separatorStyle = .none
-    self.tableView.register(TextFieldCellView.self,
-                         forCellReuseIdentifier: TextFieldCellView.reuseID)
-    self.tableView.allowsSelection = false
-    self.tableView.bounces = true
+    private func setView() {
+        backgroundColor = .white
+        let data = TitleAndMessage(title: "Header Title", message: "Message")
+        let tableViewHeader = FormTableViewHeaderView(data: data)
 
-    self.addSubview(self.tableView)
-    self.addSubview(self.btnContinue)
-  }
-    
+        tableView.tableHeaderView = tableViewHeader
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        tableView.register(TextFieldCellView.self,
+                           forCellReuseIdentifier: TextFieldCellView.reuseID)
+        tableView.allowsSelection = false
+        tableView.bounces = true
+
+        addSubview(tableView)
+        addSubview(btnContinue)
+    }
+
     private func setConstraints() {
-        self.tableView.constrain(top: self.topAnchor,
-                              leading: self.leadingAnchor,
-                              trailing: self.trailingAnchor,
-                              padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        tableView.constrain(top: topAnchor,
+                            leading: leadingAnchor,
+                            trailing: trailingAnchor,
+                            padding: .init(top: 0, left: 0, bottom: 0, right: 0))
 
-        self.btnContinue.constrain(top: tableView.bottomAnchor,
+        btnContinue.constrain(top: tableView.bottomAnchor,
                               leading: leadingAnchor,
                               bottom: bottomAnchor,
                               trailing: trailingAnchor,
                               padding: .init(top: 0, left: 20, bottom: 10, right: 20),
                               size: .init(width: 0, height: 48))
-        
-      }
+    }
 }
-

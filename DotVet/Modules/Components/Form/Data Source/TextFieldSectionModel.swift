@@ -10,16 +10,16 @@ import Foundation
 
 // ROWS VIEWMODEL
 protocol TableViewSectionModelType {
-  associatedtype Item
-  init(header: String, items: [Item])
-    
-  var header: String { get }
-  var items: [Item] { get }
+    associatedtype Item
+    init(header: String, items: [Item])
+
+    var header: String { get }
+    var items: [Item] { get }
 }
 
 struct FormTextFieldSectionModel: TableViewSectionModelType {
-  typealias Item = TextFieldCellViewModel
-    
-  var header: String
-  var items: [Item]
+    typealias Item = TextFieldCellViewModel
+
+    var header: String
+    var items: [Item]
 }

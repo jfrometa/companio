@@ -6,8 +6,8 @@
 //  Copyright © 2020 Upgrade. All rights reserved.
 //
 
-import UIKit
 import IQKeyboardManagerSwift
+import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        
+
         let navigationController = UINavigationController()
         let navigator = DefaultNavigatonComposer
             .build(navigationController: navigationController)

@@ -7,8 +7,8 @@
 //
 
 import Combine
-import UIKit
 import MaterialComponents
+import UIKit
 
 protocol AdjustableForKeyboard: class {
     func subscribeToKeyboard(store: inout Set<AnyCancellable>)
@@ -32,7 +32,7 @@ extension TextFieldCellView {
         }
         last.returnKeyType = .done
         last.textfield.addTarget(last,
-                               action: #selector(UIResponder.resignFirstResponder),
-                               for: .editingDidEndOnExit)
+                                 action: #selector(UIResponder.resignFirstResponder),
+                                 for: .editingDidEndOnExit)
     }
 }
