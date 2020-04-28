@@ -11,7 +11,7 @@
 		8E2CBB0B244CEC7A00E4832F /* MDCTextField_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */; };
 		8E2CBB0D244CEFEF00E4832F /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0C244CEFEF00E4832F /* TextFieldCellViewModel.swift */; };
 		8E474D5F24579AA400E7DCF2 /* Pods_DotVet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418D7DC3C24D2041B82DAACF /* Pods_DotVet.framework */; };
-		8E474D622457A27400E7DCF2 /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D612457A27400E7DCF2 /* TextFieldHandler.swift */; };
+		8E474D622457A27400E7DCF2 /* TextFieldHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D612457A27400E7DCF2 /* TextFieldHandlerProtocol.swift */; };
 		8E474D652457A30400E7DCF2 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D642457A30400E7DCF2 /* UserDefaultManager.swift */; };
 		8E543951244BB3970076A2CC /* ScrollingStackView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */; };
 		8E57ACE3245649B000C2FA6D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE2245649B000C2FA6D /* FormView.swift */; };
@@ -82,7 +82,7 @@
 		8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField_Combine_ext.swift; sourceTree = "<group>"; };
 		8E2CBB0C244CEFEF00E4832F /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		8E474D582457995000E7DCF2 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E474D612457A27400E7DCF2 /* TextFieldHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHandler.swift; sourceTree = "<group>"; };
+		8E474D612457A27400E7DCF2 /* TextFieldHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E474D642457A30400E7DCF2 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView_ext.swift; sourceTree = "<group>"; };
 		8E57ACE2245649B000C2FA6D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 			children = (
 				8EF2D123244561490056AEF5 /* TextFieldCellView.swift */,
 				8E2CBB0C244CEFEF00E4832F /* TextFieldCellViewModel.swift */,
-				8E474D612457A27400E7DCF2 /* TextFieldHandler.swift */,
+				8E474D612457A27400E7DCF2 /* TextFieldHandlerProtocol.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -629,7 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E474D622457A27400E7DCF2 /* TextFieldHandler.swift in Sources */,
+				8E474D622457A27400E7DCF2 /* TextFieldHandlerProtocol.swift in Sources */,
 				8E78F4542440EC1F00C6033C /* RegistryProtocol.swift in Sources */,
 				8E57ACED24565BB400C2FA6D /* FormTextFieldSectionModel.swift in Sources */,
 				8EF2D12E244577540056AEF5 /* String_ext.swift in Sources */,

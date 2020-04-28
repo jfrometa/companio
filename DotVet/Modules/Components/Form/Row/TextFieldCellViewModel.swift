@@ -26,6 +26,7 @@ struct TextFieldCellViewModel {
          fieldType: FieldType = .regular,
          validation: @escaping ((String) -> Bool) = { _ in false },
          maxInput: Int? = nil) {
+        
         self.title = title
         self.placeHolder = placeHolder
         self.maxInput = maxInput
