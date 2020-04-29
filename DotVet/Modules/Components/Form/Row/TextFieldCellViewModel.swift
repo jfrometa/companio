@@ -36,17 +36,25 @@ struct TextFieldCellViewModel {
         self.underlineMessage = underlineMessage
     }
     
-    static func Mocked() -> TextFieldCellViewModel {
-        return TextFieldCellViewModel(title: "TITLE",
-                                      defaultValue: "defaultValue",
-                                      placeHolder: "placeHolder",
-                                      underlineMessage: "underline messagge",
+    static func Mocked() -> [TextFieldCellViewModel] {
+        return [TextFieldCellViewModel(title: "PET",
+                                      defaultValue: "",
+                                      placeHolder: "Pet Name",
+                                      underlineMessage: "",
                                       fieldType: .regular,
                                       validation: { (inputText) -> Bool in
-                                          print("inputText: onValidationClosure  \(inputText)")
-                                          return true
+                                        return inputText.isOnlyLetters && !inputText.isEmpty
                                       },
-                                      maxInput: 10)
+                                      maxInput: 30),
+               TextFieldCellViewModel(title: "PET",
+                                defaultValue: "",
+                                placeHolder: "Gender",
+                                underlineMessage: "",
+                                fieldType: .regular,
+                                validation: { (inputText) -> Bool in
+                                  return inputText.isOnlyLetters && !inputText.isEmpty
+                                },
+                                maxInput: 30)]
     }
     static func Mocked2() -> TextFieldCellViewModel {
         return TextFieldCellViewModel(title: "TITLE",

@@ -12,7 +12,7 @@ import UIKit
 class FormView: UIView {
     let tableView = UITableView(frame: .zero, style: .grouped).withAutoLayout()
     let tableViewHeader: FormTableViewHeaderView  = {
-       let  data = TitleAndMessage(title: "Header TitleHeader TitleHeader Title", message: "Message")
+       let  data = TitleAndMessage(title: "Add Pet!", message: "Whats your pets name?")
        let header = FormTableViewHeaderView(data: data).withAutoLayout()
        return header
     }()
@@ -34,7 +34,7 @@ class FormView: UIView {
 
     private func setView() {
         self.backgroundColor = .white
-        
+        self.tableView.backgroundColor = .clear
         self.tableView.separatorStyle = .none
         self.tableView.register(TextFieldCellView.self,
                            forCellReuseIdentifier: TextFieldCellView.reuseID)

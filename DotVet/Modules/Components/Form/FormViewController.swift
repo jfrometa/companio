@@ -29,25 +29,18 @@ class FormViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = self.mainView
-        mainView.tableView.dataSource = dataSource
-        mainView.tableView.delegate = dataSource
+        self.mainView.tableView.dataSource = dataSource
+        self.mainView.tableView.delegate = dataSource
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel()
         
-        let mocked = FormTextFieldSectionModel(header: "TITLE / HEADER 1!",
-                                           items: [TextFieldCellViewModel.Mocked(),
-                                           TextFieldCellViewModel.Mocked2()])
-        
-        let mocked2 = FormTextFieldSectionModel(header: "TITLE/HEADER 2 !!",
-                                            items: [TextFieldCellViewModel.Mocked(),
-                                            TextFieldCellViewModel.Mocked(),
-                                            TextFieldCellViewModel.Mocked(),
-                                            TextFieldCellViewModel.Mocked2()])
+        let mocked = FormTextFieldSectionModel(header: "About your Pet",
+                                           items: TextFieldCellViewModel.Mocked())
 
-        dataSource.update([mocked] + [mocked2])
+        self.dataSource.update([mocked] )
     }
 
     private func bindViewModel() {

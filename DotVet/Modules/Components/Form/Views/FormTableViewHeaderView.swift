@@ -25,12 +25,12 @@ class FormTableViewHeaderView: UIView {
     private func setView(data: TitleAndMessage) {
         self.title.numberOfLines = 0
         self.title.lineBreakMode = .byWordWrapping
-        self.title.attributedText = data.title.formatTextWithFont(color: .yellow)
+        self.title.attributedText = data.title.formatTextWithFont(size: 20, color: .black)
         self.title.textAlignment = .center
 
         self.subtitle.numberOfLines = 0
         self.subtitle.lineBreakMode = .byWordWrapping
-        self.subtitle.attributedText = data.message.formatTextWithFont(color: .green)
+        self.subtitle.attributedText = data.message.formatTextWithFont(size: 14,color: .gray)
         self.subtitle.textAlignment = .center
 
         self.container.addSubview(self.title)
