@@ -16,6 +16,7 @@
 		8E474D682457BBA000E7DCF2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D672457BBA000E7DCF2 /* CameraViewController.swift */; };
 		8E474D6A2457BE4E00E7DCF2 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D692457BE4E00E7DCF2 /* CameraViewModel.swift */; };
 		8E474D6C2457BE6000E7DCF2 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474D6B2457BE6000E7DCF2 /* CameraView.swift */; };
+		8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */; };
 		8E543951244BB3970076A2CC /* ScrollingStackView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */; };
 		8E57ACE3245649B000C2FA6D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE2245649B000C2FA6D /* FormView.swift */; };
 		8E57ACE524564CC300C2FA6D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE424564CC300C2FA6D /* Reusable.swift */; };
@@ -90,6 +91,7 @@
 		8E474D672457BBA000E7DCF2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8E474D692457BE4E00E7DCF2 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		8E474D6B2457BE6000E7DCF2 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatest_Combine_ext.swift; sourceTree = "<group>"; };
 		8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView_ext.swift; sourceTree = "<group>"; };
 		8E57ACE2245649B000C2FA6D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		8E57ACE424564CC300C2FA6D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */,
 				8E57ACE424564CC300C2FA6D /* Reusable.swift */,
 				8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */,
+				8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				8EF2D0DC2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift in Sources */,
 				8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */,
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
+				8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */,
 				8E57ACEB245656B200C2FA6D /* Sequence_ext.swift in Sources */,
 				8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */,
 				8E57ACF02456830200C2FA6D /* TitleLabelView.swift in Sources */,

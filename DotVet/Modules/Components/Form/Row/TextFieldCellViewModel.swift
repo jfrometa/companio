@@ -14,17 +14,17 @@ struct TextFieldCellViewModel {
     let underlineMessage: String?
     let placeHolder: String?
     var maxInput: Int?
-    var validation: (String) -> (Bool)
+    var validation: ((String) -> (Bool))?
     let fieldType: FieldType
     var defaultValue: String?
-    let isValidInput = PassthroughSubject<Bool, Never>()
+    let validationPublisher = PassthroughSubject<Bool, Never>()
 
     init(title: String,
          defaultValue: String = "",
          placeHolder: String = "",
          underlineMessage: String? = nil,
          fieldType: FieldType = .regular,
-         validation: @escaping ((String) -> Bool) = { _ in false },
+         validation: ((String) -> Bool)? = { _ in true },
          maxInput: Int? = nil) {
         
         self.title = title

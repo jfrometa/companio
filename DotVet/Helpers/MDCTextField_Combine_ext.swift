@@ -29,13 +29,22 @@ extension MDCTextField {
     }
 
     func validateInput(controller: MDCTextInputControllerBase,
-                       errorMessage: String,
+                       model: TextFieldCellViewModel,
                        store: inout Set<AnyCancellable>,
-                       validate: @escaping (String) -> Bool) {
+                       validate: ((String) -> Bool)?) {
         textDidChangeNotification
-            .map { validate($0) }
+            .map { text -> Bool in
+                guard let _validate = validate else { return true }
+                return _validate(text)
+             }
             .sink(receiveValue: { isValid in
-                if !isValid { controller.setErrorText(errorMessage, errorAccessibilityValue: nil) }
+                if !isValid {
+                    model.validationPublisher.send(false)
+                    controller.setErrorText("errorMessage", errorAccessibilityValue: nil) }
+                else {
+                    model.validationPublisher.send(true)
+                    controller.setErrorText(nil, errorAccessibilityValue: nil)
+                }
             })
             .store(in: &store)
     }

@@ -29,18 +29,13 @@ class FormViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = self.mainView
-        self.mainView.tableView.dataSource = dataSource
-        self.mainView.tableView.delegate = dataSource
+        self.mainView.tableView.dataSource = self.dataSource
+        self.mainView.tableView.delegate = self.dataSource
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel()
-        
-        let mocked = FormTextFieldSectionModel(header: "About your Pet",
-                                           items: TextFieldCellViewModel.Mocked())
-
-        self.dataSource.update([mocked] )
     }
 
     private func bindViewModel() {
@@ -54,6 +49,18 @@ class FormViewController: UIViewController {
             })
             .map { _ in true }
             .assign(to: \.isSelected, on: mainView.btnContinue)
+            .store(in: &cancellableBag)
+        
+        output
+            .data
+            .print("data")
+            .sink(receiveValue: {
+                self.dataSource.update($0)
+            }).store(in: &cancellableBag)
+        
+        output.isValid
+            .print("isValid")
+            .assign(to: \.isEnabled, on: mainView.btnContinue)
             .store(in: &cancellableBag)
     }
 }

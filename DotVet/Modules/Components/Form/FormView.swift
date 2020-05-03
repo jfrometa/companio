@@ -19,6 +19,7 @@ class FormView: UIView {
     let btnContinue: MDCButton = {
         let button = MDCButton().withAutoLayout()
         button.setTitle("Continue", for: .normal)
+        button.isEnabled = false
         return button
     }()
 

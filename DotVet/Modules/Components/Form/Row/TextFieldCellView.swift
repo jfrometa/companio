@@ -85,7 +85,7 @@ extension TextFieldCellView {
         default:
             self.textfield
                 .validateInput(controller: tfController,
-                               errorMessage: "errorMessage",
+                               model: viewModel,
                                store: &cancelableBag,
                                validate: viewModel.validation)
         }
