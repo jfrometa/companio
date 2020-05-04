@@ -19,6 +19,8 @@
 		8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */; };
 		8E474DB6245F6F3200E7DCF2 /* FormViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DB5245F6F3200E7DCF2 /* FormViewModelProtocol.swift */; };
 		8E474DB8245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DB7245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift */; };
+		8E474DBC2460714A00E7DCF2 /* UIBarButtonItem_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DBB2460714A00E7DCF2 /* UIBarButtonItem_Combine_ext.swift */; };
+		8E474DBE246071F900E7DCF2 /* GestureRecognizer_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E474DBD246071F900E7DCF2 /* GestureRecognizer_Combine_ext.swift */; };
 		8E543951244BB3970076A2CC /* ScrollingStackView_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */; };
 		8E57ACE3245649B000C2FA6D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE2245649B000C2FA6D /* FormView.swift */; };
 		8E57ACE524564CC300C2FA6D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57ACE424564CC300C2FA6D /* Reusable.swift */; };
@@ -46,7 +48,7 @@
 		8E78F465244127F900C6033C /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F464244127F900C6033C /* UIView+ext.swift */; };
 		8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */; };
 		8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */; };
-		8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */; };
+		8E78F46F2442834700C6033C /* UIControls_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46E2442834700C6033C /* UIControls_Combine_ext.swift */; };
 		8E78F4732443747B00C6033C /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4722443747B00C6033C /* FormViewController.swift */; };
 		8E78F4752443749000C6033C /* FormPetIdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4742443749000C6033C /* FormPetIdentityViewModel.swift */; };
 		8EF2D0D82443C14A0056AEF5 /* String_UIKit_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */; };
@@ -96,6 +98,8 @@
 		8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatest_Combine_ext.swift; sourceTree = "<group>"; };
 		8E474DB5245F6F3200E7DCF2 /* FormViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModelProtocol.swift; sourceTree = "<group>"; };
 		8E474DB7245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPetDetailsViewModel.swift; sourceTree = "<group>"; };
+		8E474DBB2460714A00E7DCF2 /* UIBarButtonItem_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem_Combine_ext.swift; sourceTree = "<group>"; };
+		8E474DBD246071F900E7DCF2 /* GestureRecognizer_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizer_Combine_ext.swift; sourceTree = "<group>"; };
 		8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView_ext.swift; sourceTree = "<group>"; };
 		8E57ACE2245649B000C2FA6D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		8E57ACE424564CC300C2FA6D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -130,7 +134,7 @@
 		8E78F464244127F900C6033C /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Constraints_ext.swift; sourceTree = "<group>"; };
 		8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPetNavigator.swift; sourceTree = "<group>"; };
-		8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControls_Combine+ext.swift"; sourceTree = "<group>"; };
+		8E78F46E2442834700C6033C /* UIControls_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControls_Combine_ext.swift; sourceTree = "<group>"; };
 		8E78F4722443747B00C6033C /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		8E78F4742443749000C6033C /* FormPetIdentityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPetIdentityViewModel.swift; sourceTree = "<group>"; };
 		8E9AE7D8244BBD060090C042 /* libMaterialComponents.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMaterialComponents.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +210,18 @@
 				8E474D6B2457BE6000E7DCF2 /* CameraView.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		8E474DBA246070EE00E7DCF2 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */,
+				8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */,
+				8E78F46E2442834700C6033C /* UIControls_Combine_ext.swift */,
+				8E474DBB2460714A00E7DCF2 /* UIBarButtonItem_Combine_ext.swift */,
+				8E474DBD246071F900E7DCF2 /* GestureRecognizer_Combine_ext.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		8E57ACE624564D9C00C2FA6D /* Row */ = {
@@ -350,11 +366,11 @@
 		8E78F45F2440FC6A00C6033C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8E474DBA246070EE00E7DCF2 /* Combine */,
 				8E78F4602440FCB800C6033C /* ViewModelType.swift */,
 				8E78F462244104E200C6033C /* PreviewViews.swift */,
 				8E78F464244127F900C6033C /* UIView+ext.swift */,
 				8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */,
-				8E78F46E2442834700C6033C /* UIControls_Combine+ext.swift */,
 				8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */,
 				8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */,
 				8EF2D0DB2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift */,
@@ -364,10 +380,8 @@
 				8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */,
 				8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */,
 				8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */,
-				8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */,
 				8E57ACE424564CC300C2FA6D /* Reusable.swift */,
 				8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */,
-				8E474DB3245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -661,6 +675,7 @@
 				8EF2D12E244577540056AEF5 /* String_ext.swift in Sources */,
 				8E57ACE3245649B000C2FA6D /* FormView.swift in Sources */,
 				8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */,
+				8E474DBC2460714A00E7DCF2 /* UIBarButtonItem_Combine_ext.swift in Sources */,
 				8E78F4562440ED5300C6033C /* OwnerProtocol.swift in Sources */,
 				8E474D6C2457BE6000E7DCF2 /* CameraView.swift in Sources */,
 				8E78F45A2440F54700C6033C /* PetView.swift in Sources */,
@@ -669,6 +684,7 @@
 				8EF2D130244577BC0056AEF5 /* UITextField_ext.swift in Sources */,
 				8E474D682457BBA000E7DCF2 /* CameraViewController.swift in Sources */,
 				8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */,
+				8E474DBE246071F900E7DCF2 /* GestureRecognizer_Combine_ext.swift in Sources */,
 				8E78F4752443749000C6033C /* FormPetIdentityViewModel.swift in Sources */,
 				8E57ACE524564CC300C2FA6D /* Reusable.swift in Sources */,
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
@@ -677,7 +693,7 @@
 				8E474D652457A30400E7DCF2 /* UserDefaultManager.swift in Sources */,
 				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
 				8EF2D0DC2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift in Sources */,
-				8E78F46F2442834700C6033C /* UIControls_Combine+ext.swift in Sources */,
+				8E78F46F2442834700C6033C /* UIControls_Combine_ext.swift in Sources */,
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */,
 				8E474DB8245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift in Sources */,

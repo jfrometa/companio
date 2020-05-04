@@ -23,8 +23,9 @@ class FormPetDetailsViewModel: FormViewModelable {
 
     func transform(input: Input) -> Output {
        let rawData = fields()
-       let data = transformToTextFieldSections(rawData)
        let validators = makeValidatorPublisher(with: rawData)
+       let data = transformToTextFieldSections(rawData)
+      
        let dataPublisher = CurrentValueSubject<[FormTextFieldSectionModel], Never>(data)
      
         let tapped = input.btnAddTap

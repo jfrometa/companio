@@ -2,6 +2,8 @@ import Combine
 import UIKit
 
 /// Extending the `UIControl` types to be able to produce a `UIControl.Event` publisher.
+/// // from article: https://www.avanderlee.com/swift/custom-combine-publisher/
+
 protocol CombineCompatible {}
 extension UIControl: CombineCompatible {}
 extension CombineCompatible where Self: UIControl {

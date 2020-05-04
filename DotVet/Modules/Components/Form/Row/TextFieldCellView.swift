@@ -81,7 +81,11 @@ extension TextFieldCellView {
         
         switch viewModel.fieldType {
         case .datePicker:
-            self.textfield.setDatePickerAsTextInput()
+            self.textfield
+                .setDatePickerAsTextInput(controller: tfController,
+                                        model: viewModel,
+                                        store: &cancelableBag,
+                                        validate: viewModel.validation)
         default:
             self.textfield
                 .validateInput(controller: tfController,

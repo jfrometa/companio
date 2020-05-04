@@ -24,7 +24,7 @@ struct TextFieldCellViewModel {
          placeHolder: String = "",
          underlineMessage: String? = nil,
          fieldType: FieldType = .regular,
-         validation: ((String) -> Bool)? = { _ in true },
+         validation: ((String) -> Bool)? = nil,
          maxInput: Int? = nil) {
         
         self.title = title
@@ -81,7 +81,7 @@ struct TextFieldCellViewModel {
                                underlineMessage: "",
                                fieldType: .datePicker,
                                validation: { (inputText) -> Bool in
-                                 return inputText.isOnlyLetters && !inputText.isEmpty
+                                 return !inputText.isEmpty
                                })]
     }
 

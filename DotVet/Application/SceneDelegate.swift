@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-
+        IQKeyboardManager.shared.disabledToolbarClasses = [FormViewController.self]
         // ignores the user theme settings and enforces .lightMode
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
