@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .build(navigationController: navigationController)
             .getDefaultPetNavigator()
 
-        let vm = FormAddPetViewModel(navigator: navigator)
+        let vm = FormPetIdentityViewModel(navigator: navigator)
         let vc = FormViewController(viewModel: vm)
 
         navigationController.setViewControllers([vc], animated: false)

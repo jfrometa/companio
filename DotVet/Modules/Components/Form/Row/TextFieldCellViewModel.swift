@@ -56,18 +56,35 @@ struct TextFieldCellViewModel {
                                 },
                                 maxInput: 30)]
     }
-    static func Mocked2() -> TextFieldCellViewModel {
-        return TextFieldCellViewModel(title: "TITLE",
-                                      defaultValue: "defaultValue",
-                                      placeHolder: "placeHolder",
-                                      underlineMessage: "underline messagge",
-                                      fieldType: .datePicker,
-                                      validation: { (inputText) -> Bool in
-                                          print("inputText: onValidationClosure  \(inputText)")
-                                          return true
-                                      },
-                                      maxInput: 20)
+     static func Mocked2() -> [TextFieldCellViewModel] {
+        return [TextFieldCellViewModel(title: "PET Details",
+                              defaultValue: "",
+                              placeHolder: "Pet Type",
+                              underlineMessage: "",
+                              fieldType: .regular,
+                              validation: { (inputText) -> Bool in
+                                return inputText.isOnlyLetters && !inputText.isEmpty
+                              },
+                              maxInput: 30),
+       TextFieldCellViewModel(title: "PET Details",
+                                defaultValue: "",
+                                placeHolder: "Breed",
+                                underlineMessage: "",
+                                fieldType: .regular,
+                                validation: { (inputText) -> Bool in
+                                  return inputText.isOnlyLetters && !inputText.isEmpty
+                                },
+                                maxInput: 30),
+        TextFieldCellViewModel(title: "Birth day Details",
+                               defaultValue: "",
+                               placeHolder: "Birthday",
+                               underlineMessage: "",
+                               fieldType: .datePicker,
+                               validation: { (inputText) -> Bool in
+                                 return inputText.isOnlyLetters && !inputText.isEmpty
+                               })]
     }
+
 }
 
 enum FieldType {

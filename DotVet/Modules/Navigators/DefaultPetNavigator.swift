@@ -9,7 +9,8 @@
 import UIKit
 
 protocol PetNavigator: class, UINavigator {
-    func goToAddPet()
+    func goToAddPetIdentity()
+    func goToAddPetDetails()
 }
 
 class DefaultPetNavigator: PetNavigator {
@@ -19,8 +20,14 @@ class DefaultPetNavigator: PetNavigator {
         self.navigationController = navigationController
     }
 
-    func goToAddPet() {
-        let vm = FormAddPetViewModel(navigator: self)
+    func goToAddPetIdentity() {
+        let vm = FormPetIdentityViewModel(navigator: self)
+        let vc = FormViewController(viewModel: vm)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func goToAddPetDetails() {
+        let vm = FormPetDetailsViewModel(navigator: self)
         let vc = FormViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }

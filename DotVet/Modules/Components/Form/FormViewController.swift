@@ -10,11 +10,11 @@ import UIKit
 
 class FormViewController: UIViewController {
     private var mainView: FormView
-    private let viewModel: FormAddPetViewModel
+    private let viewModel: FormViewModelable
     private var dataSource: FormViewDataSource
     private var cancellableBag = Set<AnyCancellable>()
     
-    init(viewModel: FormAddPetViewModel) {
+    init(viewModel: FormViewModelable) {
         self.viewModel = viewModel
         self.mainView = FormView(frame: .zero)
         self.dataSource = FormViewDataSource()
@@ -40,15 +40,10 @@ class FormViewController: UIViewController {
 
     private func bindViewModel() {
         let btnControl = mainView.btnContinue.publisher(for: [.touchUpInside])
-        let output = viewModel.transform(input: FormAddPetViewModel.Input(btnAddTap: btnControl))
+        let output = viewModel.transform(input: FormPetIdentityViewModel.Input(btnAddTap: btnControl))
 
         output.btnAddTapped
-            .handleEvents(receiveOutput: { [weak self] _ in
-                print("print AddPetViewController")
-                // self?.mainView.endEditing(true)
-            })
-            .map { _ in true }
-            .assign(to: \.isSelected, on: mainView.btnContinue)
+            .sink(receiveValue: { _ in })
             .store(in: &cancellableBag)
         
         output

@@ -9,26 +9,26 @@
 import Combine
 import UIKit
 
-class PetViewModel: ViewModelType {
-    struct Input {
-        let btnAddTap: UIControlPublisher<UIControl>
-    }
-
-    struct Output {
-        let btnAddTapped: AnyPublisher<UIControl, Never>
-    }
-
+class FormPetIdentityViewModel: FormViewModelable  {
     private var navigator: PetNavigator
 
     init(navigator: PetNavigator) {
         self.navigator = navigator
     }
 
+    func fields() -> [TextFieldCellViewModel] {
+          return TextFieldCellViewModel.Mocked()
+    }
+    
     func transform(input: Input) -> Output {
+       let rawData = fields()
+       let data = transformToTextFieldSections(rawData)
+       let validators = makeValidatorPublisher(with: rawData)
+       let dataPublisher = CurrentValueSubject<[FormTextFieldSectionModel], Never>(data)
+     
         let tapped = input.btnAddTap
             .handleEvents(receiveOutput: { [weak self] _ in
-                self?.navigator.goToAddPetIdentity()
-                print("receiveOutput ")
+                self?.navigator.goToAddPetDetails()
             }, receiveCompletion: {
                 print("receiveCompletion \($0)")
             }, receiveCancel: {
@@ -36,6 +36,11 @@ class PetViewModel: ViewModelType {
             })
             .eraseToAnyPublisher()
 
-        return Output(btnAddTapped: tapped)
+        
+        return Output(btnAddTapped: tapped,
+                     isValid: validators.eraseToAnyPublisher(),
+                     data: dataPublisher.eraseToAnyPublisher())
     }
 }
+
+

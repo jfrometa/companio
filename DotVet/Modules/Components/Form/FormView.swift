@@ -42,9 +42,9 @@ class FormView: UIView {
         self.tableView.allowsSelection = false
         self.tableView.bounces = true
 
+        self.addSubview(tableViewHeader)
         self.addSubview(tableView)
         self.addSubview(btnContinue)
-        self.addSubview(tableViewHeader)
     }
 
     private func setConstraints() {
@@ -54,7 +54,7 @@ class FormView: UIView {
                      trailing: trailingAnchor)
         
         self.tableView
-            .constrain(top: tableViewHeader.safeAreaLayoutGuide.bottomAnchor,
+            .constrain(top: tableViewHeader.bottomAnchor,
                     leading: leadingAnchor,
                     trailing: trailingAnchor,
                     padding: .init(top: 0, left: 0, bottom: 0, right: 0))
@@ -64,7 +64,7 @@ class FormView: UIView {
                       leading: leadingAnchor,
                       bottom: safeBottomAnchor,
                       trailing: trailingAnchor,
-                      padding: .init(top: 0, left: 20, bottom: 5, right: 20),
+                      padding: .init(top: 0, left: 38, bottom: 40, right: 38),
                       size: .init(width: 0, height: 48))
     }
 }
