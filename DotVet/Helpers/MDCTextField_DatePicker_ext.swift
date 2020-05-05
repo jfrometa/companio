@@ -36,7 +36,6 @@ extension MDCTextField: ToolBarable {
         done.setTitle("Done", for: .normal)
         
         cancel.publisher(for: [.touchUpInside])
-            .print("Cancel Touch")
             .sink(receiveValue: { [weak self] _ in
                 if let inputText = self?.text, inputText.isEmpty {
                     model.validationPublisher.send(false)
@@ -47,7 +46,6 @@ extension MDCTextField: ToolBarable {
             .store(in: &store)
         
         done.publisher(for: [.touchUpInside])
-            .print("Done Touch")
             .sink(receiveValue: { [weak self] _ in
             
                 let dateformatter = DateFormatter()
@@ -100,6 +98,7 @@ extension MDCTextField: ToolBarable {
         let datePicker = UIDatePicker().withAutoLayout()
         datePicker.backgroundColor = .white
         datePicker.datePickerMode = .date
+        
         datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())
         datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -20, to: Date())
 
