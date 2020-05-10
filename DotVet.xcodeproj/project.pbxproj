@@ -49,7 +49,6 @@
 		8E78F45A2440F54700C6033C /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4592440F54700C6033C /* PetView.swift */; };
 		8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F45B2440F57700C6033C /* PetViewModel.swift */; };
 		8E78F4612440FCB800C6033C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F4602440FCB800C6033C /* ViewModelType.swift */; };
-		8E78F463244104E200C6033C /* PreviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F462244104E200C6033C /* PreviewViews.swift */; };
 		8E78F465244127F900C6033C /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F464244127F900C6033C /* UIView+ext.swift */; };
 		8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */; };
 		8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */; };
@@ -140,7 +139,6 @@
 		8E78F4592440F54700C6033C /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
 		8E78F45B2440F57700C6033C /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
 		8E78F4602440FCB800C6033C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		8E78F462244104E200C6033C /* PreviewViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViews.swift; sourceTree = "<group>"; };
 		8E78F464244127F900C6033C /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Constraints_ext.swift; sourceTree = "<group>"; };
 		8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPetNavigator.swift; sourceTree = "<group>"; };
@@ -229,6 +227,54 @@
 				8E0704572468893400560C77 /* UIImage_Resize_ext.swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		8E0704592468B88800560C77 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8E78F464244127F900C6033C /* UIView+ext.swift */,
+				8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		8E07045A2468B8A600560C77 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */,
+				8EF2D12D244577540056AEF5 /* String_ext.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		8E07045B2468B8C800560C77 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */,
+				8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */,
+				8E57ACE424564CC300C2FA6D /* Reusable.swift */,
+				8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8E07045C2468B8D300560C77 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D0DB2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift */,
+				8EF2D12B244576100056AEF5 /* UITextField_Layer_ext.swift */,
+				8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */,
+				8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		8E07045D2468B93000560C77 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */,
+			);
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		8E474D632457A2D600E7DCF2 /* UserDefaults */ = {
@@ -405,23 +451,14 @@
 		8E78F45F2440FC6A00C6033C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8E07045D2468B93000560C77 /* ScrollView */,
+				8E07045C2468B8D300560C77 /* UITextField */,
+				8E07045B2468B8C800560C77 /* Foundation */,
+				8E07045A2468B8A600560C77 /* String */,
+				8E0704592468B88800560C77 /* UIView */,
 				8E0704562468891500560C77 /* UIImage */,
 				8E474DBA246070EE00E7DCF2 /* Combine */,
 				8E78F4602440FCB800C6033C /* ViewModelType.swift */,
-				8E78F462244104E200C6033C /* PreviewViews.swift */,
-				8E78F464244127F900C6033C /* UIView+ext.swift */,
-				8E78F46624412E6300C6033C /* UIView_Constraints_ext.swift */,
-				8EF2D0D72443C14A0056AEF5 /* String_UIKit_ext.swift */,
-				8EF2D0D92443CA4F0056AEF5 /* Double_STRDate_ext.swift */,
-				8EF2D0DB2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift */,
-				8EF2D0DD2443D7F70056AEF5 /* Date_ext.swift */,
-				8EF2D12B244576100056AEF5 /* UITextField_Layer_ext.swift */,
-				8EF2D12D244577540056AEF5 /* String_ext.swift */,
-				8EF2D12F244577BC0056AEF5 /* UITextField_ext.swift */,
-				8E543950244BB3970076A2CC /* ScrollingStackView_ext.swift */,
-				8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */,
-				8E57ACE424564CC300C2FA6D /* Reusable.swift */,
-				8E57ACEA245656B200C2FA6D /* Sequence_ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -737,7 +774,6 @@
 				8EF2D0DC2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift in Sources */,
 				8E78F46F2442834700C6033C /* UIControls_Combine_ext.swift in Sources */,
 				8E07044F24678AC900560C77 /* NavBarThemeconfiguration.swift in Sources */,
-				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */,
 				8E474DB8245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift in Sources */,
 				8E57ACEB245656B200C2FA6D /* Sequence_ext.swift in Sources */,
