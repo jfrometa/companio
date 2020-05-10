@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E07044C24678A3300560C77 /* NavigationThemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07044B24678A3300560C77 /* NavigationThemer.swift */; };
+		8E07044F24678AC900560C77 /* NavBarThemeconfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E07044E24678AC900560C77 /* NavBarThemeconfiguration.swift */; };
+		8E0704512468859600560C77 /* NavigableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0704502468859600560C77 /* NavigableProtocol.swift */; };
+		8E070453246887B600560C77 /* left_arrow.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8E070452246887B600560C77 /* left_arrow.imageset */; };
+		8E0704552468884C00560C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E0704542468884C00560C77 /* Assets.xcassets */; };
+		8E0704582468893400560C77 /* UIImage_Resize_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0704572468893400560C77 /* UIImage_Resize_ext.swift */; };
 		8E2CBB09244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */; };
 		8E2CBB0B244CEC7A00E4832F /* MDCTextField_Combine_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */; };
 		8E2CBB0D244CEFEF00E4832F /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CBB0C244CEFEF00E4832F /* TextFieldCellViewModel.swift */; };
@@ -33,7 +39,6 @@
 		8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F418243FD7D100C6033C /* AppDelegate.swift */; };
 		8E78F41B243FD7D100C6033C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41A243FD7D100C6033C /* SceneDelegate.swift */; };
 		8E78F41D243FD7D100C6033C /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F41C243FD7D100C6033C /* PetViewController.swift */; };
-		8E78F424243FD7D700C6033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E78F423243FD7D700C6033C /* Assets.xcassets */; };
 		8E78F432243FD7D700C6033C /* PetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F431243FD7D700C6033C /* PetTests.swift */; };
 		8E78F43D243FD7D800C6033C /* DotVetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F43C243FD7D800C6033C /* DotVetUITests.swift */; };
 		8E78F4502440DE6900C6033C /* PetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78F44F2440DE6900C6033C /* PetProtocol.swift */; };
@@ -86,6 +91,12 @@
 		418D7DC3C24D2041B82DAACF /* Pods_DotVet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotVet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C820D0CDFFF2A0AD137A06 /* Pods_DotVetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotVetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAEFC199063F3579B274CB2 /* Pods-DotVet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotVet.debug.xcconfig"; path = "Target Support Files/Pods-DotVet/Pods-DotVet.debug.xcconfig"; sourceTree = "<group>"; };
+		8E07044B24678A3300560C77 /* NavigationThemer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationThemer.swift; sourceTree = "<group>"; };
+		8E07044E24678AC900560C77 /* NavBarThemeconfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarThemeconfiguration.swift; sourceTree = "<group>"; };
+		8E0704502468859600560C77 /* NavigableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigableProtocol.swift; sourceTree = "<group>"; };
+		8E070452246887B600560C77 /* left_arrow.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = left_arrow.imageset; path = Assets.xcassets/left_arrow.imageset; sourceTree = "<group>"; };
+		8E0704542468884C00560C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E0704572468893400560C77 /* UIImage_Resize_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Resize_ext.swift; sourceTree = "<group>"; };
 		8E2CBB08244CEC4D00E4832F /* MDCTextInputControllerUnderline_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextInputControllerUnderline_ext.swift; sourceTree = "<group>"; };
 		8E2CBB0A244CEC7A00E4832F /* MDCTextField_Combine_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField_Combine_ext.swift; sourceTree = "<group>"; };
 		8E2CBB0C244CEFEF00E4832F /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
@@ -113,7 +124,6 @@
 		8E78F418243FD7D100C6033C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E78F41A243FD7D100C6033C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8E78F41C243FD7D100C6033C /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
-		8E78F423243FD7D700C6033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E78F426243FD7D700C6033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E78F428243FD7D700C6033C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E78F42D243FD7D700C6033C /* DotVetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotVetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +204,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E07044A24678A0200560C77 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				8EF2D120244556C10056AEF5 /* NavigationProtocols.swift */,
+				8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		8E07044D24678A8C00560C77 /* Themer */ = {
+			isa = PBXGroup;
+			children = (
+				8E07044B24678A3300560C77 /* NavigationThemer.swift */,
+				8E07044E24678AC900560C77 /* NavBarThemeconfiguration.swift */,
+				8E0704502468859600560C77 /* NavigableProtocol.swift */,
+			);
+			path = Themer;
+			sourceTree = "<group>";
+		};
+		8E0704562468891500560C77 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				8E0704572468893400560C77 /* UIImage_Resize_ext.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		8E474D632457A2D600E7DCF2 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,8 +283,9 @@
 		8E57ACEE245682C500C2FA6D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8E57ACEF2456830200C2FA6D /* TitleLabelView.swift */,
+				8E57ACE2245649B000C2FA6D /* FormView.swift */,
 				8E57ACF12456867300C2FA6D /* FormTableViewHeaderView.swift */,
+				8E57ACEF2456830200C2FA6D /* TitleLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				8E78F428243FD7D700C6033C /* Info.plist */,
+				8EF2D11F2445566F0056AEF5 /* Navigators */,
 				8E78F45F2440FC6A00C6033C /* Helpers */,
 				8E78F44D2440CE0400C6033C /* Networking */,
 				8E78F44C2440CDF800C6033C /* Entities */,
@@ -311,7 +350,6 @@
 			children = (
 				8E474D632457A2D600E7DCF2 /* UserDefaults */,
 				8EF2D1272445653B0056AEF5 /* Components */,
-				8EF2D11F2445566F0056AEF5 /* Navigators */,
 				8E78F44E2440DE3200C6033C /* Pet */,
 			);
 			path = Modules;
@@ -357,7 +395,8 @@
 		8E78F45D2440F7F900C6033C /* Assets And Support */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F423243FD7D700C6033C /* Assets.xcassets */,
+				8E0704542468884C00560C77 /* Assets.xcassets */,
+				8E070452246887B600560C77 /* left_arrow.imageset */,
 				8E78F425243FD7D700C6033C /* LaunchScreen.storyboard */,
 			);
 			path = "Assets And Support";
@@ -366,6 +405,7 @@
 		8E78F45F2440FC6A00C6033C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8E0704562468891500560C77 /* UIImage */,
 				8E474DBA246070EE00E7DCF2 /* Combine */,
 				8E78F4602440FCB800C6033C /* ViewModelType.swift */,
 				8E78F462244104E200C6033C /* PreviewViews.swift */,
@@ -399,8 +439,8 @@
 		8E78F4712443686B00C6033C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F4742443749000C6033C /* FormPetIdentityViewModel.swift */,
 				8E474DB5245F6F3200E7DCF2 /* FormViewModelProtocol.swift */,
+				8E78F4742443749000C6033C /* FormPetIdentityViewModel.swift */,
 				8E474DB7245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -409,8 +449,8 @@
 		8EF2D11F2445566F0056AEF5 /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
-				8E78F46924417D8300C6033C /* DefaultPetNavigator.swift */,
-				8EF2D120244556C10056AEF5 /* NavigationProtocols.swift */,
+				8E07044D24678A8C00560C77 /* Themer */,
+				8E07044A24678A0200560C77 /* Navigators */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -418,12 +458,11 @@
 		8EF2D1222445611B0056AEF5 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				8E78F4722443747B00C6033C /* FormViewController.swift */,
 				8E78F4712443686B00C6033C /* ViewModels */,
 				8E57ACEE245682C500C2FA6D /* Views */,
 				8E57ACE7245652F900C2FA6D /* Data Source */,
 				8E57ACE624564D9C00C2FA6D /* Row */,
-				8E57ACE2245649B000C2FA6D /* FormView.swift */,
-				8E78F4722443747B00C6033C /* FormViewController.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -558,7 +597,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E78F424243FD7D700C6033C /* Assets.xcassets in Resources */,
+				8E0704552468884C00560C77 /* Assets.xcassets in Resources */,
+				8E070453246887B600560C77 /* left_arrow.imageset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +711,7 @@
 			files = (
 				8E474D622457A27400E7DCF2 /* TextFieldHandlerProtocol.swift in Sources */,
 				8E78F4542440EC1F00C6033C /* RegistryProtocol.swift in Sources */,
+				8E0704582468893400560C77 /* UIImage_Resize_ext.swift in Sources */,
 				8E57ACED24565BB400C2FA6D /* FormTextFieldSectionModel.swift in Sources */,
 				8EF2D12E244577540056AEF5 /* String_ext.swift in Sources */,
 				8E57ACE3245649B000C2FA6D /* FormView.swift in Sources */,
@@ -690,10 +731,12 @@
 				8E78F419243FD7D100C6033C /* AppDelegate.swift in Sources */,
 				8E57ACF22456867300C2FA6D /* FormTableViewHeaderView.swift in Sources */,
 				8E78F45C2440F57700C6033C /* PetViewModel.swift in Sources */,
+				8E0704512468859600560C77 /* NavigableProtocol.swift in Sources */,
 				8E474D652457A30400E7DCF2 /* UserDefaultManager.swift in Sources */,
 				8E78F46724412E6300C6033C /* UIView_Constraints_ext.swift in Sources */,
 				8EF2D0DC2443CFC10056AEF5 /* MDCTextField_DatePicker_ext.swift in Sources */,
 				8E78F46F2442834700C6033C /* UIControls_Combine_ext.swift in Sources */,
+				8E07044F24678AC900560C77 /* NavBarThemeconfiguration.swift in Sources */,
 				8E78F463244104E200C6033C /* PreviewViews.swift in Sources */,
 				8E474DB4245F6D4C00E7DCF2 /* CombineLatest_Combine_ext.swift in Sources */,
 				8E474DB8245F9ECC00E7DCF2 /* FormPetDetailsViewModel.swift in Sources */,
@@ -711,6 +754,7 @@
 				8E78F4732443747B00C6033C /* FormViewController.swift in Sources */,
 				8E78F4522440DFB500C6033C /* SchemeProtocol.swift in Sources */,
 				8E474DB6245F6F3200E7DCF2 /* FormViewModelProtocol.swift in Sources */,
+				8E07044C24678A3300560C77 /* NavigationThemer.swift in Sources */,
 				8E78F46A24417D8300C6033C /* DefaultPetNavigator.swift in Sources */,
 				8E57ACF4245686C600C2FA6D /* TitleAndMessage.swift in Sources */,
 				8EF2D12C244576100056AEF5 /* UITextField_Layer_ext.swift in Sources */,

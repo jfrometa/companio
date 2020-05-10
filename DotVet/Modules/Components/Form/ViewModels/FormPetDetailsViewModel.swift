@@ -11,6 +11,9 @@ import Combine
 import UIKit
 
 class FormPetDetailsViewModel: FormViewModelable {
+    var navigationBarConfiguration: NavigationControllerStyle = .withBackButtonAndCancelButton
+    var navigationBarTitle: String = "Pet Details"
+    
     private var navigator: PetNavigator
 
     init(navigator: PetNavigator) {

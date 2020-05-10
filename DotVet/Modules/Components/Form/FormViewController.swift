@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-class FormViewController: UIViewController {
+class FormViewController: NavigationThemer {
     private var mainView: FormView
     private let viewModel: FormViewModelable
     private var dataSource: FormViewDataSource
@@ -18,8 +18,12 @@ class FormViewController: UIViewController {
         self.viewModel = viewModel
         self.mainView = FormView(frame: .zero)
         self.dataSource = FormViewDataSource()
+        
+        let configuration = NavbarThemeConfiguration(style: viewModel.navigationBarConfiguration,
+                                           title: viewModel.navigationBarTitle,
+                                           tintColor: .black, barColor: .white)
 
-        super.init(nibName: nil, bundle: nil)
+        super.init(navbarThemeConfiguration: configuration)
     }
 
     required init?(coder _: NSCoder) {
@@ -48,13 +52,11 @@ class FormViewController: UIViewController {
         
         output
             .data
-            .print("data")
-            .sink(receiveValue: {
-                self.dataSource.update($0)
+            .sink(receiveValue: { [weak self] in
+                self?.dataSource.update($0)
             }).store(in: &cancellableBag)
         
         output.isValid
-            .print("isValid")
             .assign(to: \.isEnabled, on: mainView.btnContinue)
             .store(in: &cancellableBag)
     }

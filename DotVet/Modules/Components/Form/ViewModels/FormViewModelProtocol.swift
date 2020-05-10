@@ -27,6 +27,9 @@ protocol FormViewModelable:  class {
     
   func transform(input: Input) -> Output
   func fields() -> [TextFieldCellViewModel]
+    
+  var navigationBarConfiguration: NavigationControllerStyle { get }
+  var navigationBarTitle: String { get }
 }
 
 extension FormViewModelable {
